@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        .box{
+            width: 800px;
+            /* height: 800px; */
+            margin: auto;
+            padding: 30px;
+        }
+        input{
+            padding: 10px;border: 1px solid brown;border-radius: 10px;
+            width: 150px;
+            font-size: 12px;
+        }
+        button{
+            padding: 10px;border-radius: 10px;
+            color: red;background-color: aquamarine;font-weight: 700;
+        }
+        h2{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>作业一</h2>
+        <input type="text" id="inputBox1" placeholder="请输入语文成绩">
+        <input type="text" id="inputBox2" placeholder="请输入数学成绩">
+        <input type="text" id="inputBox3" placeholder="请输入英语成绩">
+        <button onclick="sumFunction()">点击计算</button>
+        <input type="text" id="sum" placeholder="输出结果">
+    </div>
+    <div class="box">
+        <h2>作业二</h2>
+        <input type="text" id="inputwindow1" placeholder="请输入第一个数字">
+        <input type="text" id="inputwindow2" placeholder="请输入第二个数字">
+        <input type="text" id="inputwindow3" placeholder="请输入第三个数字">
+        <button onclick="windowFunction()">点击弹出窗口</button>
+    </div>
+    <div class="box">
+        <h2>作业三</h2>
+        <input type="text" id="inputpl" placeholder="请输入半径'R'">
+        <button onclick="plFunction()">点击计算</button>
+        <input type="text" id="plSum" placeholder="输出结果">
+    </div>
+    <div class="box">
+        <h2>作业四</h2>
+        <input type="text" id="inputR" placeholder="请输入半径'R'">
+        <input type="text" id="inputH" placeholder="请输入高度'H'">
+        <button onclick="roundFunction()">点击计算</button>
+        <input type="text" id="plSum" placeholder="输出结果看控制台输出">
+    </div>
+</body>
+</html>
+<script src="./作业.js"></script>
+
