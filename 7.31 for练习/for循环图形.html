@@ -8,46 +8,32 @@
         *{
             margin: 0;padding: 0;box-sizing: border-box;
         }
+        .w{
+            display: flex;flex-wrap: wrap;
+
+        }
         #box{
+            width: 450px;
           border: 1px solid black;color: red;text-align: center;
+        }
+        #box1{
+            width: 450px;
+            border: 1px solid red;color: blue;
+            margin: auto;
+        }
+        #box2{
+            width: 450px;
+            border: 1px solid red;color: blue;
+            margin: auto;
         }
     </style>
 </head>
 <body>
-    <div id="box">
-        
+    <div class="w">
+    <div id="box"></div>
+    <div id="box1"></div>
+    <div id="box2"></div>
     </div>
 </body>
 </html>
-<!-- <script src="./for循环图形.js"></script> -->
-<script>
-    var box = document.getElementById('box');
-var a = 13;
-var str = ''
-// 外层循环打印行数
-for (let i = 1; i <= a+1; i++){
-     // 内层循环打印每行空格个数
-    for (let j = 1; j <= i; j++){
-    
-    }
-    // 内层循环打印每行星星个数
-    for (let j = i-1; j <= a; j++){
-        box.innerHTML += `☆☆☆`
-    }
-    box.innerHTML +='<br>';
-}
-document.write(`☆`);document.write('<br>');
-for (let i = 1; i <= a; i++){
-    // 内层循环打印每行空格个数
-   for (let j = i; j <= a; j++){
-   
-   }
-   // 内层循环打印每行星星个数
-   for (let j = 1; j <= i; j++){
-    box.innerHTML += `☆☆☆`
-   }
-  
-   box.innerHTML +='<br>';
-}
-
-</script>
+<script src="./for循环图形.js"></script>

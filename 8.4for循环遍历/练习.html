@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            /* border: 1px solid black; */
+            text-align: center;
+        }
+
+        p {
+            background-color: aqua;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+        }
+
+        button {
+            padding: 30px;
+            border: none;
+            background-color: bisque;
+            border-radius: 30px;
+            color: red;
+            cursor: pointer
+        }
+        #countDowblack{
+            /* display: none; */
+        }
+        #idP{
+            /* display: none; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1 style="text-align: left;">数组练习</h1>
+        <p>遍历1-100计算数字和+平均值</p>
+        <button onclick="numberCumpote()">开始计算</button>
+        <P>1-100整数中随机出现</P>
+        <button onclick="randomFunction()">开始计算</button>
+        <h1 style="text-align: left;">时间获取练习</h1>
+        <p id="currentTime">2023年 08月 05号 18:05:35 星期 6</p>
+        <!-- <button onclick="stop()">暂停</button> -->
+        <h1 style="text-align: left;">十月一倒计时</h1>
+        <p id="firstTime">距离十月一日仅剩 56天 05时 53分 44秒</p>
+        <h1 style="text-align: left;">倒计时：00:02:15</h1>
+        <p>
+            <span >00</span>：
+            <span>0</span><span id="countDow1">2</span>：
+            <span id="countDowblack">0</span><span id="countDow2">15</span>
+        </p>
+        <h1 style="text-align: left;">计算朋友圈发布时间：</h1>
+        <button onclick="publish(new Date())">点击发布</button>
+        <p id="idP">已发布默认内容      
+            <span id="publichIdspan"></span>
+        </p>
+    </div>
+</body>
+
+</html>
+<script src="./练习.js"></script>
