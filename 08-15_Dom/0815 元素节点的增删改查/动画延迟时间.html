@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			.box {
+				width: 300px;
+				height: 300px;
+				background-color: lightblue;
+				position: relative;
+			}
+			.second {
+				height: 240px;
+				width: 4px;
+				background-color: red;
+				position: absolute;
+				left: calc(50% - 2px);
+				top: calc(50% - 120px);
+				/* 动画的延迟时间
+      1、值为正值：动画延迟多长时间开始执行
+      2、值为负值：负值并没有让动画提前开始，可以改变动画开始的位置
+      */
+				animation: xz 60s linear infinite;
+
+				/* animation-delay: -45s; */
+			}
+			@keyframes xz {
+				from {
+					transform: rotate(0);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="second">6</div>
+		</div>
+		<script>
+			var secondBox = document.querySelector('.second');
+
+			var now = new Date();
+			var seconds = now.getSeconds();
+
+			secondBox.style.animationDelay = -seconds + 's';
+		</script>
+	</body>
+</html>

@@ -12,7 +12,8 @@ for (let i = 0; i <= friends.length; i++){
             var temp = friends[i];
             friends[i] = friends[j]
             friends[j] = temp;
-        }
+        } 
     }
 }
-console.log('friends',friends);
+console.log('friends', friends);
+

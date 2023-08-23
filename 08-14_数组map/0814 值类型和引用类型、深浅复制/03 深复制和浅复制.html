@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+
+		<style></style>
+	</head>
+	<body>
+		<script>
+			// 深复制和浅复制主要是针对复杂数据类型：对象和数组
+			// 浅复制：复制的是对象的内存地址
+			// 深复制：把对象的值复制一份给新的变量
+
+			// 数组的浅复制：直接给把一个变量赋值给另外一个变量
+			var a = [0, 1, 2, 3, 4];
+			var b = a; // 浅复制
+			// a[0] = 1;
+			b[0] = 1;
+
+			// console.log('a: ', a);
+			// console.log('b: ', b);
+
+			// 数组的深复制
+			// 使用自带的一些函数：可以实现一层的深复制
+			// 数组中存储的是值类型：数字、布尔、字符串，可以实现深复制。
+			var a1 = [1, 2, 3, 4, 5, '6', true];
+			var a2 = [...a1];
+			// var a2 = Array.from(a1);
+			// var a2 = a1.concat();
+			// var a2 = a1.slice(0);
+			// var a2 = a1.map(function (item) {
+			// 	return item;
+			// });
+			// var a2 = a1.filter(function (item) {
+			// 	return true;
+			// });
+			a1[0] = 100;
+			// console.log(a1, a2);
+
+			// 如果数组中的元素存放是数组或者对象，无法对内层的对象进行深复制
+			var a1 = [1, 2, 3, 4, 5, [10, 20], { v1: 10 }];
+			var a2 = [...a1];
+			a1[0] = 100;
+			a1[5][1] = 200;
+			a1[6].v1 = 100;
+			// console.log(a1, a2);
+
+			// var a11 = a1[5];
+			// console.log(a1[5][1], a11[1]);
+
+			// 对象的深复制
+			// 如果对象中没有嵌套的对象，可以实现深复制，如果有嵌套的对象，只能深复制外层的对象，不能深复制内层的对象
+			var o1 = { v1: 10, v2: 20, v3: { v33: 33 } };
+			// var o2 = Object.assign({}, o1);
+			// var o2 = { ...o1 };
+			// var o2 = deepClone(o1);
+			var o2 = _.cloneDeep(o1);
+			o1.v1 = 100;
+			o1.v3.v33 = 333;
+			console.log(o1, o2);
+
+      // 对于多维数组和多层对象的深复制，不能使用上面简单的方法，需要自己封装函数或者使用第三方的工具函数
+      // 推荐使用lodash的 _.cloneDeep() 
+
+			var obj1 = {
+				name: '张三',
+				age: 20,
+				huahua: {
+					name: '花花',
+					gm: {},
+				},
+			};
+
+			function deepClone(obj) {
+				var objClone = Array.isArray(obj) ? [] : {};
+				for (key in obj) {
+					// 判断obj子元素是否为对象
+					if (obj[key] && typeof obj[key] === 'object') {
+						// 如果obj[key]是对象，递归复制
+						objClone[key] = deepClone(obj[key]);
+					} else {
+						//如果obj[key]不是对象，简单复制
+						objClone[key] = obj[key];
+					}
+				}
+				return objClone;
+			}
+
+			// var obj2 = {};
+			// for (var key in obj1) {
+			// 	var value = obj1[key];
+			// 	// 判断属性值是否是对象
+			// 	if (typeof value === 'object') {
+			// 		console.log(value, '是对象');
+			// 		obj2[key] = {};
+			// 		for (var k in value) {
+			// 			console.log('k', k, value[k]);
+			//       if (typeof value[k] === 'object') {
+
+			//       }else{
+
+			//       }
+			// 		}
+			// 	} else {
+			// 		console.log(value, '不是对象');
+			// 		obj2[key] = value;
+			// 	}
+			// }
+			// console.log('obj2: ', obj2);
+
+			// var obj2 = {};
+			// obj2.name = obj1.name;
+			// obj2.age = obj1.age;
+			// obj2.huahua = {};
+			// obj2.huahua.name = obj1.huahua.name;
+
+			// obj2.huahua.gm = {}
+
+			// obj1.age = 22;
+			// obj1.huahua.age = 20;
+
+			// console.log(obj1, obj2);
+		</script>
+	</body>
+</html>

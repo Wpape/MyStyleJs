@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<!-- 从标签向JS传值: 在事件中区分点击的是哪一个按钮
+      1、传递this或者event：this就是绑定事件的标签对象，ev.target触发事件的元素对象
+      2、传递索引值，可以先找到所有的按钮标签，然后使用索引值区分点击的是哪一个按钮
+    -->
+		<!-- <button onclick="btnClick(this,0);">按钮1</button>
+		<button onclick="btnClick(this,1);">按钮2</button>
+		<button onclick="btnClick(this,2);">按钮3</button>
+		<button onclick="btnClick(this,3);">按钮4</button>
+		<button onclick="btnClick(this,4);">按钮5</button>
+		<button onclick="btnClick(this,5);">按钮6</button>
+		<script>
+			// 点击不同的按钮，分别显示为： 红橙黄绿青蓝
+			var colors = ['red', 'green', 'yellow', 'orange', 'cyan', 'blue'];
+			function btnClick(el, index) {
+				console.log('btnClick', el, index);
+				el.style.color = colors[index];
+			}
+		</script> -->
+
+		<!-- <hr />
+		<button onclick="btnClick(this,'red');">按钮1</button>
+		<button onclick="btnClick(this,'green');">按钮2</button>
+		<button onclick="btnClick(this,'yellow');">按钮3</button>
+		<button onclick="btnClick(this,'orange');">按钮4</button>
+		<button onclick="btnClick(this,'cyan');">按钮5</button>
+		<button onclick="btnClick(this, 'blue');">按钮6</button>
+		<script>
+			// 点击不同的按钮，分别显示为： 红橙黄绿青蓝
+			function btnClick(el, color) {
+				console.log('btnClick', el, color);
+				el.style.color = color;
+			}
+		</script> -->
+
+		<hr />
+		<button class="btn" onclick="btnClick(0);">按钮1</button>
+		<button class="btn" onclick="btnClick(1);">按钮2</button>
+		<button class="btn" onclick="btnClick(2);">按钮3</button>
+		<button class="btn" onclick="btnClick(3);">按钮4</button>
+		<button class="btn" onclick="btnClick(4);">按钮5</button>
+		<button class="btn" onclick="btnClick(5);">按钮6</button>
+		<script>
+			// 点击不同的按钮，分别显示为： 红橙黄绿青蓝
+			var colors = ['red', 'green', 'yellow', 'orange', 'cyan', 'blue'];
+			var btns = document.querySelectorAll('.btn');
+			function btnClick(index) {
+				console.log('btnClick', index);
+				btns[index].style.color = colors[index];
+			}
+		</script>
+
+		<!-- <hr />
+		<button class="btn" onclick="btnClick(event);" data-index="0">按钮1</button>
+		<button class="btn" onclick="btnClick(event);" data-index="1">按钮2</button>
+		<button class="btn" onclick="btnClick(event);" data-index="2">按钮3</button>
+		<button class="btn" onclick="btnClick(event);" data-index="3">按钮4</button>
+		<button class="btn" onclick="btnClick(event);" data-index="4">按钮5</button>
+		<button class="btn" onclick="btnClick(event);" data-index="5">按钮6</button>
+		<script>
+			// 点击不同的按钮，分别显示为： 红橙黄绿青蓝
+			var colors = ['red', 'green', 'yellow', 'orange', 'cyan', 'blue'];
+			function btnClick(ev) {
+				var index = ev.target.dataset.index;
+				console.log('btnClick', ev.target, index);
+				ev.target.style.color = colors[index];
+			}
+		</script> -->
+	</body>
+</html>

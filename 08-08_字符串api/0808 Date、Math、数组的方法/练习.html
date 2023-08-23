@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="author" content="金西振">
+    <title></title>
+    <style>
+    
+    </style>
+  </head>
+  <body>
+    
+    <script>
+    // 创建一个数组，数组中每个元素从1-100整数中随机出现，数组长度为100
+    var arr = [];
+    for(var i = 0; i < 100; i++){
+      var random = Math.floor(Math.random()*100+1);
+      // arr[arr.length] = random;
+      arr.push(random);
+      // arr.unshift(random);
+    }
+    console.log('arr: ', arr);
+    
+    </script>
+  </body>
+</html>

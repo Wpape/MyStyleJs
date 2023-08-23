@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			.box {
+				width: 200px !important;
+				height: 300px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box" style="color: orange; font-size: 30px">box</div>
+		<script>
+			var box = document.getElementById('box');
+
+      // style="color: orange; font-size: 30px"
+      // box.style 得到的是一个对象，这个对象中就包含了标签的所有样式，给标签添加的内联样式都会呈现在该对象的属性中
+      console.log(box.style);
+      // 只能获取标签上style属性设置CSS样式，不能获取style标签设置的样式
+      console.log(box.style.width);
+      console.log(box.style.color);
+
+      // 通过style设置的样式最终会作为标签的内联样式
+      // 多个单词的属性名，要把属性中连字符-去掉，首字母小写，其后每个单词首字母大写
+      box.style.textAlign = 'center';
+      // // 如果使用[]赋值的写法，可以直接使用连字符-，不用改变单词的大小写
+      box.style['font-style'] = 'italic';
+      box.style.width = '300px';
+      box.style.height = '200px';
+
+      // cssText 获取标签样式文本：只包含获取style属性设置的样式
+      // color: orange; font-size: 30px; text-align: center; font-style: italic; width: 300px; height: 200px;
+      console.log(box.style.cssText);
+
+      box.style.cssText = 'color: #00f';
+
+      // 给cssText设置空字符串，可以把style属性设置的样式清空
+      box.style.cssText = '';
+
+      // getComputedStyle 获取标签的计算样式。参数是元素对象，返回值是一个对象，对象中包含所有css样式
+      // 可以获取style标签设置的样式，也可以获取style属性设置的样式
+      // console.log(getComputedStyle(box).width);
+      // console.log(getComputedStyle(box).backgroundColor);
+		</script>
+	</body>
+</html>

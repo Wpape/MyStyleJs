@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+      table{
+        border: 1px solid;
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      td{
+        border: 1px solid;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+      }
+    </style>
+	</head>
+	<body>
+    <select name="" id="">
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+    </select>
+
+    <table>
+      <tr>
+        <td>01</td>
+        <td>02</td>
+        <td>03</td>
+        <td>04</td>
+        <td>05</td>
+        <td>06</td>
+        <td>07</td>
+        <td>08</td>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>02</td>
+        <td>03</td>
+        <td>04</td>
+        <td>05</td>
+        <td>06</td>
+        <td>07</td>
+        <td>08</td>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>02</td>
+        <td>03</td>
+        <td>04</td>
+        <td>05</td>
+        <td>06</td>
+        <td>07</td>
+        <td>08</td>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>02</td>
+        <td>03</td>
+        <td>04</td>
+        <td>05</td>
+        <td>06</td>
+        <td>07</td>
+        <td>08</td>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>02</td>
+        <td>03</td>
+        <td>04</td>
+        <td>05</td>
+        <td>06</td>
+        <td>07</td>
+        <td>08</td>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>02</td>
+        <td>03</td>
+        <td>04</td>
+        <td>05</td>
+        <td>06</td>
+        <td>07</td>
+        <td>08</td>
+      </tr>
+    </table>
+		<!-- 找标签：1、每一个不少于三种写法；2、以ul为基础，使用元素的遍历找标签，每一个不少于三种写法 -->
+		<!-- 
+      在div.nav内部：
+      找ul
+      找所有的li标签
+      找内容为国际的li标签
+      找内容为首页的a标签
+      -->
+		<div class="nav">
+			<div class="container">
+				<ul class="nav-list">
+					<li class="home"><a href="#">首页</a></li>
+					<li><a href="#">国内</a></li>
+					<li><a href="#">国际</a></li>
+					<li><a href="#">科技</a></li>
+					<li><a href="#">娱乐</a></li>
+					<li><a href="#">互联网</a></li>
+				</ul>
+			</div>
+		</div>
+		<script>
+      console.log(document.querySelector('.nav-list'));
+      console.log(document.querySelector('ul'));
+      console.log(document.getElementsByTagName('ul')[0]);
+      console.log(document.getElementsByClassName('nav-list')[0]);
+
+      var ul = document.querySelector('.nav-list');
+      console.log(ul.children);
+      console.log(ul.querySelectorAll('li'));
+      console.log(ul.getElementsByTagName('li'));
+
+      console.log(ul.nodeType);
+    </script>
+	</body>
+</html>

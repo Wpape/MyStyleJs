@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			// every 每一项：让数组的元素参与某种运算，使用return返回运算是结果
+			// 如果每一项的运算结果都是true，最终res的值为true
+			// 如果有一项为false，res的值为false
+			var res = nums.every(function (item, index) {
+				// console.log('item, index: ', item, index);
+
+				// 判断数组中的元素值都是正数
+				return item > 0;
+
+				// 判断数组中的元素值减去6，是否都是正数
+				// var num = item - 6;
+				// return num > 0;
+			});
+			console.log('res: ', res);
+
+
+      // some 某一些：让数组的元素参与某种运算，使用return返回运算是结果
+      // 只要有一项运算结果为true，最终res的值为true
+      var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			var res = nums.some(function (item, index) {
+        console.log('item, index: ', item, index);
+        return item - 6 > 0;
+			});
+      console.log('res: ', res);
+
+			// var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			// var flag = true;
+			// for (var i = 0; i < nums.length; i++) {
+			// 	if (nums[i]-6 <= 0) {
+			// 		flag = false;
+			// 		break;
+			// 	}
+			// }
+			// console.log('flag: ', flag);
+		</script>
+	</body>
+</html>

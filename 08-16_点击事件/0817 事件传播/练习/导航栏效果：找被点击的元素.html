@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			.nav-list {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				display: flex;
+				line-height: 50px;
+				background-color: lightblue;
+			}
+			.item {
+				padding: 0 20px;
+			}
+
+			.active {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="nav-list">
+			<li class="item active">选项1</li>
+			<li class="item">选项2</li>
+			<li class="item">选项3</li>
+			<li class="item">选项4</li>
+			<li class="item">选项5</li>
+			<li class="item">选项6</li>
+		</ul>
+		<script>
+			var items = document.querySelectorAll('.item');
+			for (var i = 0; i < items.length; i++) {
+				var item = items[i];
+				item.onclick = function () {
+					// 第一步：找到所有的item，让他们都变为黑色：移除active类名
+					for (var i = 0; i < items.length; i++) {
+						items[i].classList.remove('active');
+					}
+
+					// 第二步：最终点击谁，让谁变红：添加active类名
+					this.classList.add('active');
+				};
+			}
+
+			// 点击选项1，先让所有的选项红色去掉，再让被点击选项1变红
+			// items[0].onclick = function () {
+			// 	// 第一步：找到所有的item，让他们都变为黑色：移除active类名
+			// 	for (var i = 0; i < items.length; i++) {
+			// 		items[i].classList.remove('active');
+			// 	}
+
+			// 	// 第二步：最终点击谁，让谁变红：添加active类名
+			// 	this.classList.add('active');
+			// };
+
+			// 点击选项2，先让所有的选项红色去掉，再让被点击选项2变红
+			// items[1].onclick = function () {
+			// 	// 第一步：找到所有的item，让他们都变为黑色：移除active类名
+			// 	for (var i = 0; i < items.length; i++) {
+			// 		items[i].classList.remove('active');
+			// 	}
+
+			// 	// 第二步：最终点击谁，让谁变红：添加active类名
+			// 	this.classList.add('active');
+			// };
+
+			// 点击选项3，先让所有的选项红色去掉，再让被点击选项3变红
+			// items[2].onclick = function () {
+			// 	// 第一步：找到所有的item，让他们都变为黑色：移除active类名
+			// 	for (var i = 0; i < items.length; i++) {
+			// 		items[i].classList.remove('active');
+			// 	}
+
+			// 	// 第二步：最终点击谁，让谁变红：添加active类名
+			// 	this.classList.add('active');
+			// };
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<div><span class="time"></span> 点场</div>
+		<span class="hour">00</span>
+		:
+		<span class="minute">00</span>
+		:
+		<span class="second">00</span>
+		<script>
+			var timeBox = document.querySelector('.time');
+			var hourBox = document.querySelector('.hour');
+			var minuteBox = document.querySelector('.minute');
+			var secondBox = document.querySelector('.second');
+
+			var SEC = 1;
+			var MIN = 60 * SEC;
+			var HOU = 60 * MIN;
+			var DAY = 24 * HOU;
+			var time = 7200;
+			update();
+			function update() {
+				var now = new Date();
+				var seconds = now.getSeconds();
+				var minutes = now.getMinutes();
+				var hours = now.getHours(); // 0 1 2 3 4 5 6 7 8 9 ... 23
+				// 10点 10:32:16   11点：11:15:26
+				// 12点 12:21:15
+				// 14点
+				// console.log(hours, minutes, seconds);
+				// 用总的倒计时时间减去已经走过的时间：算上走过的分钟数和走过的秒数。
+				// 剩余的时间就是总的要倒计时的时间：当时间变化的时候，走过的时间会自动增长，剩余的时间会自动减少
+
+				// 如果小时数是偶数总的倒计时时间是7200，用7200减
+				// 如果小时数是奇数总的倒计时时间是3600，用3600减
+				if (hours % 2 === 0) {
+					time = 7200 - minutes * 60 - seconds;
+				} else {
+					time = 3600 - minutes * 60 - seconds;
+				}
+        // 如果小时数是偶数，直接就是几点场，如果是奇数，需要减1,
+        // 10点直接用10，11点需要减1；12点直接用12,13点需要减1
+				timeBox.innerHTML = hours % 2 === 0 ? hours : hours - 1;
+
+				var hours = Math.floor((time % DAY) / HOU);
+				var minutes = Math.floor((time % HOU) / MIN);
+				var seconds = time % MIN;
+				hourBox.innerHTML = hours;
+				minuteBox.innerHTML = minutes;
+				secondBox.innerHTML = seconds;
+			}
+
+			setInterval(update, 1000);
+		</script>
+	</body>
+</html>

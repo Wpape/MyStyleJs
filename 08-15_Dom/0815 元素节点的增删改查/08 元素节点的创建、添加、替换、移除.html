@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<div class="box" style="color: aqua;">
+			<div class="inner">box</div>
+			<div class="inner">box</div>
+		</div>
+		<ul>
+			<li class="item1">1</li>
+			<li class="item2">2</li>
+			<li class="item3">3</li>
+			<li class="item4">4</li>
+			<li class="item5">5</li>
+			<li class="item6">6</li>
+		</ul>
+		<script>
+			var ul = document.querySelector('ul');
+			var box = document.querySelector('.box');
+			var item1 = document.querySelector('.item1');
+			var item3 = document.querySelector('.item3');
+
+			// 新建的元素对象：1、创建；2、美化；3、添加
+
+			// createElement 创建元素节点，参数是标签名
+			var div = document.createElement('div');
+			// console.log('div: ', div);
+			// ul.appendChild(div);
+
+			div.innerHTML = '创建的div标签';
+			div.style.color = 'red';
+
+			// appendChild 把元素添加到父元素内部最后的位置
+			// 1、添加的是新建的元素对象，直接添加
+			// 2、添加的是页面上已经存在元素对象，把元素从原来的位置挪到新的位置
+			// ul.appendChild(div);
+			// document.body.appendChild(div);
+
+			// ul.appendChild(box);
+
+			// insertBefore 在父元素的内容插入新的元素，可以放在父元素内部任意的位置
+			// 参数1：要添加的元素；参数2：父元素内部的子元素
+			// 1、如果存在参数2，新的元素放在参数2前面
+			// 2、如果参数2为null，作用等价于 appendChild
+			// ul.insertBefore(div, item3);
+			// ul.insertBefore(div, null);
+
+			// 移除元素节点
+			// 删除自己
+			// div.remove();
+
+			// 删除父元素内部的某个子元素
+			// ul.removeChild(div);
+
+			// ul.remove();
+
+      // 把ul的内容清空：把ul内部所有的子元素都删除
+      // ul.innerHTML = '';
+
+			// console.log(' ul.children: ', ul.children);
+			// for (var i = 0; i < ul.children.length; i++) {
+			// 	if (ul.children.length) {
+			// 		ul.removeChild(ul.children[i]);
+			// 		i--;
+			// 	}
+			// }
+
+      // replaceChild 替换元素节点：参数1：新的元素对象；参数2：被替换的元素对象
+      ul.replaceChild(div, item3);
+		</script>
+	</body>
+</html>

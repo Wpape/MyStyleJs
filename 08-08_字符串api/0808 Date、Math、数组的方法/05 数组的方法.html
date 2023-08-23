@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			// console.log(new Array(10));
+			// console.log(new Array(10, 20, 30));
+			// of生成新的数组，弥补了new Array的不足：当参数是一个数字n的时候，new Array返回的是长度为n的空数组
+			// console.log(Array.of(10));
+			// console.log(Array.of(10, 20, 30));
+			// from: 参数是一个类数组的结构：字符串、map、set，返回一个数组
+			// console.log(Array.from('hello'));
+			// console.log(Array.from([1,2,3]));
+
+			var arr = [10, 20, 30];
+			// join把数组转换为字符串
+			console.log(arr.join());
+			console.log(arr.join(','));
+			console.log(arr.join(''));
+			console.log(arr.join('-'));
+			console.log(arr.join('|'));
+
+			var str = '10-210-30';
+			console.log(str.split('-'));
+
+			// push 往数组的末尾处添加新的元素。参数可以是任意数量
+			// pop 从数组的末尾处删除一个元素
+			// arr.push(1, 6, 5);
+			// arr.push(1);
+			// arr.push(6);
+			// arr.push(5);
+			// arr.pop();
+			// arr.pop();
+
+			// unshift 往数组的开始位置添加新的元素。参数可以是任意数量
+			// shift 从数组的开始位置删除一个元素
+			// arr.unshift(1, 6, 5);
+			// arr.unshift(1);
+			// arr.unshift(6);
+			// arr.unshift(5);
+			// arr.shift();
+
+			arr = [10, 20, 30, 40, 50, 60, 70];
+			// 参数1：索引值（包含）；参数2：删除的个数，可以省略；参数3：从参数3开始，是数组元素
+			// 1、删除数组元素：删除任意位置的数组元素：位置和删除的个数可以随意的定义
+			// arr.splice(1, 1);// 从索引为1的位置开始，删除1个元素
+			// arr.splice(1, 3);// 从索引为1的位置开始，删除3个元素
+			// arr.splice(0, 1); // 等价于shift
+			// arr.splice(arr.length - 1, 1); //等价于pop
+
+			// 2、替换数组的元素：把任意位置的元素替换掉：位置和个数可以随意的定义
+			// arr.splice(1, 2, 200, 300);// 从索引为1的位置开始，使用200和300替换掉2个元素 [10, 200, 300, 40, 50, 60, 70]
+			// arr.splice(1, 3, 200, 300);// 从索引为1的位置开始，使用200和300替换掉3个元素 [10, 200, 300, 50, 60, 70]
+			// arr.splice(1, 1, 200, 300)
+
+			// 3、新增元素：在任意的位置添加任意数量的数组元素---删除的个数一定是0
+			// arr.splice(1, 0, 200, 300);// 从索引为1位置开始，添加两个数组元素200和300，原数组中从20开始的元素自动往后移动
+			// [10, 200, 300, 20, 30, 40, 50, 60, 70]
+
+			// arr.splice(0, 0, 200);//  [200, 10, 20, 30, 40, 50, 60, 70]
+
+			// arr.splice(arr.length, 0, 200);// [10, 20, 30, 40, 50, 60, 70, 200]
+
+			arr = [10, 20, 30, 20, 50, '20', 70];
+			// indexOf()和 lastIndexOf()都返回要查找的元素在数组中的位置，如果没找到则返回-1。
+			// includes 判断数组中是否包含某个元素
+			// 这三个方法作比较的时候用的都是全等 ===
+			console.log(arr.indexOf(20));
+			console.log(arr.indexOf('20'));
+			console.log(arr.lastIndexOf(20));
+			console.log(arr.includes(20));
+
+			// slice(开始位置, 结束位置)截取数组
+			// 一个参数：从开始位置（包含）一直截取到数组的末尾处
+			console.log(arr.slice(2)); // [30, 20, 50, '20', 70]
+			// 两个参数：从开始位置（包含）一直截取到结束位置（不包含）
+			console.log(arr.slice(2, 5)); //  [30, 20, 50]
+
+    // concat 合并数组
+			var arr1 = [1, 2, 3];
+			var arr2 = [10, 20, 30];
+      console.log(arr1.concat(arr2));// [1, 2, 3, 10, 20, 30]
+
+			console.log('arr: ', arr);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			#box {
+				width: 200px;
+				height: 200px;
+				background-color: lightblue;
+			}
+			#inner {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="inner"></div>
+		</div>
+		<script>
+			var box = document.getElementById('box');
+			var inner = document.getElementById('inner');
+
+			// addEventListener(eventType, callback, useCapture)
+			// useCapture：布尔值，如果设为true，表示监听函数将在捕获阶段（capture）触发。
+			// 该参数可选，默认值为false 表示监听函数只在冒泡阶段被触发。
+
+			// 捕获：从最外层开始，一直到目标元素：从window对象开始，依次是 document html body  ... 目标元素
+			// 冒泡：从目标元素开始，一直到window对象：从目标元素元素开始，依次是 父级元素 body html ... window
+
+			document.addEventListener(
+				'click',
+				function () {
+					console.log('document 捕获阶段');
+				},
+				true
+			);
+			document.addEventListener(
+				'click',
+				function () {
+					console.log('document 冒泡阶段');
+				},
+				false
+			);
+
+			document.body.addEventListener(
+				'click',
+				function () {
+					console.log('body 捕获阶段');
+				},
+				true
+			);
+			document.body.addEventListener(
+				'click',
+				function () {
+					console.log('body 冒泡阶段');
+				},
+				false
+			);
+
+			box.addEventListener(
+				'click',
+				function (ev) {
+					console.log('box 捕获阶段');
+					// 阻止事件传播：可以阻止捕获阶段，也可以阻止冒泡阶段
+					// ev.stopPropagation();
+				},
+				true
+			);
+			box.addEventListener(
+				'click',
+				function (ev) {
+					console.log('box 冒泡阶段1');
+					// ev.stopPropagation();
+					ev.stopImmediatePropagation();
+				},
+				false
+			);
+			box.addEventListener(
+				'click',
+				function (ev) {
+					console.log('box 冒泡阶段2');
+				},
+				false
+			);
+			box.addEventListener(
+				'click',
+				function (ev) {
+					console.log('box 冒泡阶段3');
+				},
+				false
+			);
+
+			inner.addEventListener(
+				'click',
+				function () {
+					console.log('inner 捕获阶段');
+				},
+				true
+			);
+			inner.addEventListener(
+				'click',
+				function () {
+					console.log('inner 冒泡阶段');
+				},
+				false
+			);
+
+			// 如果没有使用 addEventListener的参数3，这三种方式添加的时间默认都是在冒泡阶段执行
+			// inner.onclick = function(){
+			//   console.log('inner');
+			// }
+			// box.onclick = function(){
+			//   console.log('box');
+			// }
+		</script>
+	</body>
+</html>

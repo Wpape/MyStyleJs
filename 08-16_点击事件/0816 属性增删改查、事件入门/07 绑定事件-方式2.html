@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<button class="btn1">按钮1</button>
+		<button class="btn2">
+			<span style="background-color: red">文本</span> <br />
+			按钮2
+		</button>
+		<script>
+			var btn1 = document.querySelector('.btn1');
+			var btn2 = document.querySelector('.btn2');
+			// 方式二：绑定事件，先找到元素对象，然后用元素对象调用 onclick 属性，最后给onclick属性赋值一个函数
+			// 使用方式二绑定事件有两种写法：
+			// 写法一：先声明函数，然后把函数赋值给onclick属性
+			// 写法二：直接给onclick属性赋值一个函数
+			// function login() {
+			// 	console.log('登录');
+			// }
+			var login = function (event) {
+				console.log('登录1', event);
+			};
+			// console.log('login: ', login);
+			// login是一个变量，他的值是一个函数，把函数赋值改为onclick属性，当事件触发的时候，会自动调用函数
+			// 当事件函数执行的时候，默认会给事件函数传递一个参数，参数是事件对象，使用事件函数接收参数的时候用一个形参，形参的名字可以随便写
+
+			// 写法一：
+			btn1.onclick = login;
+
+			// 写法二：
+			btn2.onclick = function (ev) {
+				// ev.target 指的是触发事件的目标元素---鼠标点击了哪个元素target就是谁
+				// this指的是绑定事件的元素---哪个标签使用了onclick属性，this就是谁
+				console.log('登录2', ev.target);
+				console.log('登录2', this);
+			};
+
+			// this 和 arguments是函数的默认参数，可以直接在函数内部使用
+			// this的指向是不确定的
+			// 在事件中this指向绑定事件的元素---哪个标签使用了onclick属性，this就是谁
+		</script>
+	</body>
+</html>

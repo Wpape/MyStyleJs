@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.f {
+				width: 190px;
+				height: 260px;
+				margin: 50px auto;
+				background: url(https://storage.360buyimg.com/channel2022/jd_home/0.0.28/assets/img/4a15d8883775742e3efbb850ae14def7.png);
+				background-size: contain;
+				background-position: 50%;
+				background-repeat: no-repeat;
+				color: #fff;
+				border: 1px solid #00000000;
+			}
+
+			.box {
+				width: 100%;
+				text-align: center;
+				font-size: 30px;
+				font-weight: 700;
+				margin-top: 31px;
+			}
+
+			.box1 {
+				margin-top: 90px;
+				font-size: 14px;
+				text-align: center;
+				line-height: 23px;
+			}
+
+			.box1 strong {
+				font-size: 18px;
+				padding-right: 2px;
+				vertical-align: middle;
+				display: inline-block;
+				margin-top: -1px;
+			}
+
+			span {
+				position: relative;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				background-color: black;
+				padding: 5px;
+				margin-left: 18px;
+				margin-top: 12px;
+				color: white;
+				text-align: center;
+				font-size: 15px;
+				line-height: 30px;
+			}
+
+			span::after {
+				content: ':';
+				display: block;
+				position: absolute;
+				right: -20px;
+				font-weight: bolder;
+				font-size: 18px;
+				width: 20px;
+				height: 100%;
+				top: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="f">
+			<div class="box">京东秒杀</div>
+			<div class="box1">
+				<strong></strong>
+				点场 距结束
+			</div>
+			<span class="Hours"></span>
+			<span class="Minute"></span>
+			<span class="Second"></span>
+		</div>
+
+		<script>
+			// 小于10 补零函数
+			function getbl(num) {
+				if (num < 10) {
+					return (num = '0' + num);
+				} else {
+					return num;
+				}
+			}
+
+			var date = new Date();
+			var hours = date.getHours();
+			if (hours % 2) {
+				hours--;
+			}
+			var strong = document.querySelector('strong');
+			strong.innerHTML = `${getbl(hours)}:00`;
+			var timer = function () {
+				var date1 = Date.now();
+				var diffTime = date.setHours(hours + 2, 0, 0, 0) - date1; // 获取时间差 (毫秒数) date.setHours(hour [, min, sec, ms])设置实例对象对应的的时间，返回改变后毫秒时间戳。
+				diffTime = parseInt(diffTime / 1000); // 转为秒数
+				var s = diffTime % 60;
+				var m = parseInt(diffTime / 60) % 60;
+				var h = parseInt(diffTime / 60 / 60) % 24;
+				var day = parseInt(diffTime / (60 * 60 * 24));
+				// console.log(s, m, h);
+				var span = document.querySelectorAll('span');
+				span[0].innerText = `${getbl(h)}`;
+				span[1].innerText = `${getbl(m)}`;
+				span[2].innerText = `${getbl(s)}`;
+			};
+			timer();
+			var timer1 = setInterval(timer, 1000);
+		</script>
+	</body>
+</html>

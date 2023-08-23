@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title>DOM学习</title>
+		<style>
+			body {
+				background-color: lightblue;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			// DOM中有一个document对象：当浏览器加载网页的时候，就会自动生成document对象，获取document对象可以使用 window.document 或者直接使用 document
+			// window：1、在JS中指的是全局对象；2、在BOM指的是浏览器窗口对象
+			console.dir(document);
+
+			// 获取页面的标题，也可以设置页面标题。获取或者设置的是title标签的内容
+			// 操作DOM的时候：标签、CSS样式，在JS中设置的操作会覆盖标签、CSS样式中书写内容
+			console.log(document.title);
+			document.title = 'document对象';
+
+			// 找到页面上的body标签
+			console.dir(document.body);
+
+			document.body.style.backgroundColor = 'red';
+
+			// 找到页面上的html标签
+			console.dir(document.documentElement);
+		</script>
+	</body>
+</html>

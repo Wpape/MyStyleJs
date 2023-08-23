@@ -1,0 +1,126 @@
+<script>
+	var arr = [
+		{ id: 1, score: 80 },
+		{ id: 2, score: 60 },
+		{ id: 3, score: 70 },
+		{ id: 1, score: 50 },
+		{ id: 3, score: 80 },
+		{ id: 8, score: 80 },
+		{ id: 9, score: 20 },
+		{ id: 1, score: 100 },
+		{ id: 3, score: 30 },
+	];
+	// arr.sort(function (x, y) {
+	// 	return y.score - x.score;
+	// });
+	// console.log('arr: ', arr);
+
+	var newArr = [];
+	for (var i = 0; i < arr.length; i++) {
+		var item = arr[i];
+		var result = newArr.find(function (el) {
+			return el.id === item.id;
+		});
+		if (!result) {
+      newArr.push(item);
+		} 
+	}
+	console.log('newArr: ', newArr);
+
+	// 先对score排序，把数组元素加到新数组中，加到新数组时，判断是否有相同的id值，如果没有直接添加，如果有不需要添加
+
+	// 把数组元素加到新数组中，加到新数组时，判断是否有相同的id值，如果没有直接添加，如果有判断score的值是否需要，最后排序
+
+	var arr2 = ['a', 'b', 'b', 'a', 'a', 'c', 'c', 'a'];
+	var newArr = [];
+	for (var i = 0; i < arr2.length; i++) {
+		var item = arr2[i];
+		// 判断newArr中是否包含item所表示的值
+		// 使用findIndex判断是否包含
+		// var result = newArr.findIndex(function (el) {
+		// 	return el === item;
+		// });
+		// console.log('i=', i, 'result: ', result, 'newArr: ', newArr, 'item:', item);
+		// if (result === -1) {
+		// 	newArr.push(item);
+		// } else {
+		// }
+
+		// 使用find判断是否包含
+		// var result = newArr.find(function (el) {
+		// 	return el === item;
+		// });
+		// console.log('i=', i, 'result: ', result, 'newArr: ', newArr, 'item:', item);
+		// if (!result) {
+		// 	newArr.push(item);
+		// } else {
+		// }
+
+		// 使用indexOf判断是否包含
+		// if (newArr.indexOf(item) === -1) {
+		// 	newArr.push(arr2[i]);
+		// }
+		// 使用include判断是否包含
+		// if (!newArr.includes(item)) {
+		// 	newArr.push(arr2[i]);
+		// }
+	}
+	// console.log('newArr: ', newArr);
+
+	var arr = ['a', 'b', 'b', 'a', 'a', 'c', 'c', 'a'];
+	// arr[0]和后面所有的元素进行对比：arr[1]/arr[2]/arr[3].../arr[length-1]  与第一个元素重复的删除掉['a', 'b', 'b', 'c', 'c']
+	// arr[1]和后面所有的元素进行对比：arr[2]/arr[3].../arr[length-1] 与第二个元素重复的删除掉['a', 'b', 'c', 'c']
+	// arr[2]->arr[3].../arr[length-1]
+	// arr[3]->arr[4].../arr[length-1]
+	// arr[4]->arr[5].../arr[length-1]
+	// arr[5]->arr[6].../arr[length-1]
+	// arr[6]->arr[7].../arr[length-1]  比较结束
+
+	// for (var i = 0; i < arr.length - 1; i++) {
+	// 	for (var j = i + 1; j < arr.length; j++) {
+	// 		if (arr[i] === arr[j]) {
+	// 			arr.splice(j, 1);
+	// 			j--;
+	// 		}
+	// 	}
+	//   console.log('arr: ', arr);
+	// }
+
+	// for (var j = 1; j < arr.length; j++) {
+	// 	if (arr[0] === arr[j]) {
+	//     arr.splice(j, 1);
+	//     j--;
+	// 	}
+	// }
+	// console.log('arr: ', arr);
+
+	// for (var j = 2; j < arr.length; j++) {
+	// 	if (arr[1] === arr[j]) {
+	//     arr.splice(j, 1);
+	//     j--;
+	// 	}
+	// }
+	// console.log('arr: ', arr);
+
+	// for (var j = 3; j < arr.length; j++) {
+	// 	if (arr[2] === arr[j]) {
+	//     arr.splice(j, 1);
+	//     j--;
+	// 	}
+	// }
+	// console.log('arr: ', arr);
+
+	var arr = [1, 2, 2, 3, 4, 4, 6];
+	// i=0 不删除 [1, 2, 2, 3, 4, 4, 6]
+	// i=1 删除2 [1, 2, 3, 4, 4, 6]，删除元素的时候，让i的值保持不变，删除了一个元素，后面的数组元素会自动往前挪一位：删除了索引为1的元素2，索引为3的元素2会往前挪到索引为1的位置
+	// i=2 不删除 [1, 2, 3, 4, 4, 6]，当i=2执行的之后，跳过了刚才往前挪动的元素2
+	// i的值还是1，
+	// for (var i = 0; i < arr.length; i++) {
+	//   console.log('i: ', i);
+	// 	if (arr[i] % 2 === 0) {
+	// 		arr.splice(i, 1);
+	//     i--;
+	// 	}
+	// }
+	// console.log('arr: ', arr);
+</script>

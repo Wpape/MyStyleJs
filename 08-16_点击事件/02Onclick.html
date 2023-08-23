@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>
+<script>
+    var arrAy = ['导航栏1','导航栏2','导航栏3','导航栏4','导航栏5']
+    var navDiv = document.createElement('div');
+    var newArr = [];
+    var newArrNone = []
+    for(let i = 0;i<arrAy.length;i++){
+    var navSpan = document.createElement('div');
+    var noneDiv = document.createElement('div');
+    var spanNac = document.createElement('span');
+    noneDiv.innerText = `内容${i}`;
+    navSpan.append(spanNac)
+    navSpan.appendChild(noneDiv);
+    newArrNone.push(noneDiv);
+    navSpan.style.padding = '20px'
+    spanNac.innerText = arrAy[i];
+        navSpan.onclick = onclickSpan;
+        navSpan.dataset.index = i
+        newArr.push(navSpan)
+    };
+    for(let i = 0;i<newArr.length;i++){
+        navDiv.append(newArr[i])
+    }
+    for(let i = 0;i<newArrNone.length;i++){
+        //清除每一个元素
+        newArrNone[i].style.display = 'none'
+    }
+    navDiv.style.display = 'block';
+    navDiv.style.width = '100%';
+    navDiv.style.display = 'flex';
+    navDiv.style.justifyContent = 'space-around';
+document.documentElement.appendChild(navDiv);
+
+
+function onclickSpan(){
+    newArrNone.forEach(function(item){
+        console.log('',item);
+        item.style.display = 'none';
+    })
+    this.style.position = 'relative';
+    newArrNone[this.dataset.index].style.display = '';
+    newArrNone[this.dataset.index].style.position = 'absolute';
+    newArrNone[this.dataset.index].style.top = '50px';
+    newArrNone[this.dataset.index].style.left = '25px';
+    console.log('',  this.style);
+}
+</script>

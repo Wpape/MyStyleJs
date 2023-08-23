@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			var nums = [10, 20, 30, 40, 50];
+			// reduce(callback, initVal)
+			// 参数1：回调函数：回调函数有4个参数
+			// 参数2：初始值
+
+			// 用法一：不带参数2，回调函数的四个参数
+			// 每次执行回调函数，在回调函数中返回一个结果，结果会给到pev
+			// 第一次运行回调函数：prev的值是数组中第一个元素的值，current取的是数组中第二个元素的值
+			// 第二次运行回调函数：prev的值是return的结果（是上一次回调函数执行return的结果），current取的是数组中第三个元素的值
+			// 第三次运行回调函数：prev的值是return的结果，current取的是数组中第四个元素的值
+
+			// 最终reduce的返回res是最后一次prev的值
+			var res = nums.reduce(function (prev, current, index) {
+				console.log('prev=', prev, '   current=', current);
+
+				return prev + current;
+			});
+			console.log('res: ', res);
+
+			// 用法二：带参数2，回调函数的四个参数
+			// 每次执行回调函数，在回调函数中返回一个结果，结果会给到pev
+
+			// 第一次运行回调函数：prev的值是参数2的值，current取的是数组中第一个元素的值
+			// 第二次运行回调函数：prev的值是return的结果，current取的是数组中第二个元素的值
+			// 第三次运行回调函数：prev的值是return的结果，current取的是数组中第三个元素的值
+
+			// 最终reduce的返回res是最后一次prev的值
+			var nums = [10, 20, 30, 40, 50];
+			var res = nums.reduce(function (prev, current, index) {
+				console.log('prev=', prev, '   current=', current);
+
+				return prev + current;
+			}, 0);
+			console.log('res: ', res);
+
+			var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			var res = nums.reduce(function (prev, current) {
+				// 偶数和
+				var result = 0;
+				if (current % 2 === 0) {
+					result = prev + current;
+				} else {
+					result = prev + 0;
+				}
+				return result; // return的结果给prev
+			}, 0);
+			console.log('res: ', res);
+      
+
+			var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			var res = nums.reduce(function (prev, current) {
+				// 偶数和
+				var val = current % 2 === 0 ? current : 0;
+				return prev + val; // return的结果给prev
+			}, 0);
+			console.log('res: ', res);
+		</script>
+	</body>
+</html>

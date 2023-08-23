@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;list-style: none;
+        }
+        .box{
+            width: 400px;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: #EAEAEA;
+        }
+        .top{
+            width: 100%;
+            height: 300px;
+            /* border: 1px solid black; */
+        }
+        .topUl{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            text-align: center;
+            color: white;
+            font-size: 19px;
+        }
+        .bottom{
+            width: 100%;
+            border: 1px solid white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="top">
+            <ul class="topUl"></ul>
+        </div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>
+<script>
+    var months = [ "January", "February", "March", "April", "May", "June",
+           "July", "August", "September", "October", "November", "December" ];
+    var msg = [
+		"元旦：1月1日至3日放假三天。",
+        "春节：2月2日至8日放假7天。",
+        "妇女节：3月8日妇女节，与我无关。",
+        "清明节：4月3日至5日放假3天",
+        "劳动节：4月30日至5月2日放假3天。",
+        "端午节：6月4日至6日放假3天。",
+        "小暑：7月7日小暑。不放假。",
+        "七夕节：8月6日七夕节。不放假。",
+        "中秋节：9月10日至12日放假3天。",
+        "国庆节：10月1日至7日放假7天。",
+        "立冬：11月8日立冬。不放假。",
+        "艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。"
+	];
+    var newMsgArray = Array.from(msg);
+
+    
+    var ulId = document.querySelector('.topUl');
+    var textid = document.querySelector('.bottom');
+    var lilist = [];
+for(let i = 1;i<=12;i++){
+    var liid = document.createElement('li');
+    lilist.push(liid)
+    liid.style.width = '80px';
+    liid.style.height = '80px';
+    liid.style.border = '2px solid black';
+    liid.style.backgroundColor = '#333333'
+    liid.style.lineHeight = '40px';
+    liid.dataset.index = i;
+    
+    liid.onmouseover = mouseoverFun;
+
+    var spanNum = document.createElement('span');
+    var spanmath = document.createElement('span');
+    spanNum.style.display = 'block'
+    spanNum.innerText = i;
+    spanNum.style.fontWeight = '700'
+    spanmath.innerText = months[i-1]
+    liid.appendChild(spanNum)
+    liid.appendChild(spanmath)
+    ulId.appendChild(liid)
+}
+//鼠标移入
+function mouseoverFun(){
+    for(let i = 0;i<lilist.length;i++){
+        lilist[i].style.color = 'white';
+        lilist[i].style.backgroundColor = '#333333';
+        // console.log('',lilist[i]);
+    }
+    textid.innerHTML = newMsgArray[this.dataset.index - 1];
+    this.style.color = 'red';
+    this.style.backgroundColor = 'white';
+};
+</script>

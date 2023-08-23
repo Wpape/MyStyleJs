@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<!--  
+      绑定事件的三种方式
+      方式一：在标签上使用 on事件名 属性绑定事件，
+        事件名：鼠标单击事件click、键盘按下事件keydown，绑定事件的时候需要在事件名的前面添加on
+        以鼠标事件为例：
+          onclick="一段可执行的JS代码"，这【一段可执行的JS代码】在事件触发的时候执行
+          事件触发：当鼠标点击标签的时候就会触发事件
+        绑定事件的时候可以传递参数：传递参数的时候可以传递多个，也可以不传递参数：
+        1、传递event: 当在标签上绑定事件时，默认会有这个参数event，名字必须是event
+            event是事件对象，对象中包含很多信息，在不同的事件中，信息也不同，比如在鼠标事件中有鼠标的位置等
+            在event中有一个属性target：目标，event.target 指的是触发事件的目标元素---鼠标点击了哪个元素target就是谁
+        2、传递this：也是默认参数，名字必须是this：this指的是绑定事件的元素---哪个标签使用了onclick属性，this就是谁
+        3、传递任意类型的数据：数字、布尔、字符串、对象等，一般用于从标签向JS传递数据
+    -->
+		<button onclick="alert(123);">按钮1</button>
+		<button onclick="var a = 2; var b = 3; console.log(a+b);">按钮2</button>
+		<button onclick="login(event);">
+			<span style="background-color: red;">文本</span> <br />
+			按钮3
+		</button>
+		<button onclick="regist(this);">
+			<span style="background-color: red;">文本</span> <br />
+			按钮4
+		</button>
+		<button onclick="itemClick(1, 22,33);">按钮5</button>
+		<button onclick="itemClick(2);">按钮6</button>
+		<script>
+      // 绑定事件的时候先在事件函数中写一个输出语句，验证事件是否绑定成功
+			function login(ev) {
+				console.log('登录', ev.target);
+			}
+			function regist(el) {
+				console.log('注册', el);
+			}
+      function itemClick(val,r1, r2) {
+        console.log('val: ', val, r1, r2);
+      }
+		</script>
+	</body>
+</html>

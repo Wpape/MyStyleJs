@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<!-- 
+      标签的属性名全部都是小写字母，如果是多个单词，每个单词都是小写字母，单词与单词之间使用连字符-连接
+      在js中获取属性:
+      1、单个单词直接使用 div.id
+      2、多个单词，除了data-之外，其余属性变成首字母小写，其后单词首字母大写
+    -->
+		<!-- 
+      data-* 是一种自定义属性，用于从标签向js传递数据
+    -->
+		<div id="box" class="box" data-index="1" data-index-number="200" index="10" HelloWorld="12313" hello-world="100">div</div>
+		<script>
+			var box = document.getElementById('box');
+
+      // data-属性在JS中会转化为dataset，dataset是一个对象
+      // 在data-后面添加的名字，会成为dataset对象的属性，不管是添加还是获取data-属性：
+      // 1、后面的属性名是一个个单词直接使用 dataset.index
+      // 2、后面的属性名多个单词，第一个单词首字母小写，其后单词首字母大写 dataset.indexNumber
+      console.log(box.dataset);
+      console.log(box.dataset.index);
+      console.log(box.dataset.indexNumber);
+
+      box.dataset.number = 300;
+      box.dataset.firstNumber = 300;
+
+      console.log(box.getAttribute('data-index'));
+      console.log(box.getAttribute('data-index-number'));
+		</script>
+	</body>
+</html>

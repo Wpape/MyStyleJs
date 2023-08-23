@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;list-style: none;
+        }
+        .box{
+            width: 345px;
+            padding: 5px;
+            border: 1px solid  blueviolet;
+        }.boxUl{
+            width: 100%;
+            flex-wrap: wrap;
+        }.boxUl li:nth-of-type(1){
+            width: 255px!important;
+            height: 255px!important;
+            border: 1px solid red;
+            float: left;
+            margin: 2px 0!important;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="boxUl">
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var ulid = document.querySelector('ul');
+    for(let i = 0;i<12;i++){
+        var liId = document.createElement('li');
+        var imgId = document.createElement('img');
+        liId.style.width = '80px'
+        liId.style.height = '80px';
+        liId.style.border ='1px solid red';
+        liId.style.margin = '2px 2px'
+        liId.style.display = 'inline-block'
+        liId.dataset.index = i;
+        liId.appendChild(imgId)
+        ulid.appendChild(liId)
+    }
+    var lilist = document.querySelectorAll('li');
+    var begliImg = [];
+    var smile = []
+    for(let i = 0;i<lilist.length;i++){
+        if(i == 0){
+            begliImg.push(lilist[i].children);
+        }else{
+            lilist[i].children[0].src = `./images/small_${i}.jpg`
+            smile.push(lilist[i])
+        }
+    }
+    begliImg[0][0].src = `./images/big_1.jpg`
+    for(let i = 0;i<smile.length;i++){
+        smile[i].onmouseover = function(){
+            begliImg[0][0].src = `./images/big_${this.dataset.index}.jpg`
+        }
+    }
+</script>

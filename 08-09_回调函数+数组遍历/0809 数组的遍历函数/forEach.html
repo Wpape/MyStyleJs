@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+			// 让数组的每一个元素都执行一次forEach的回调函数
+			// 回调函数执行的时候会传递三个参数：
+			// item 数组的元素值，按照数组元素的顺序输出
+			// index 数组的索引值
+			// array 数组本身
+      var sum = 0;
+      // forEach 遍历数组，不能提前结束，如果想提前结束遍历，需要使用for语句
+			nums.forEach(function (item, index, array) {
+        if (index == 6) {
+          return;
+        }
+        sum += item;
+				console.log('item, index: ', item, index);
+			});
+      console.log('sum: ', sum);
+
+      console.log('----------------------------------------------------');
+
+			// for (var i = 0; i < nums.length; i++) {
+			// 	var item = nums[i];
+			// 	var index = i;
+			// 	console.log('item, index: ', item, index);
+			// }
+
+
+
+		</script>
+	</body>
+</html>
+
+
+

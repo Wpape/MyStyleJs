@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<button id="btn1" class="btn1" onclick="login()">按钮1</button>
+		<button id="btn2" class="btn1">按钮2</button>
+		<button id="btn3" class="btn1">按钮3</button>
+
+		<script>
+			var btn3 = document.getElementById('btn3');
+			var btn2 = document.getElementById('btn2');
+
+			// 使用方式一和方式二绑定事件，只能给同一个事件绑定一个事件函数
+			// 如果使用方式三，可以给同一个事件绑定多个事件函数
+
+			// 移除事件的方式不一样：
+			// 方式一和方式二都是给onclcik赋值为null：btn2.onclick = null
+			// 方式三使用 removeEventListener
+
+			function login() {
+				console.log('login', this);
+			}
+			function f1() {
+				console.log('f1');
+			}
+			function f2() {
+				console.log('f2');
+			}
+			function f3() {
+				console.log('f3');
+			}
+
+			btn2.onclick = login;
+			// btn2.onclick = f1;
+
+			// btn3.addEventListener('click', login);
+			// btn3.addEventListener('click', f1);
+			// btn3.addEventListener('click', f2);
+			// btn3.addEventListener('click', f3);
+
+			btn3.addEventListener('click', login, {
+				once: true,
+			});
+			// btn3.removeEventListener('click', login);
+		</script>
+	</body>
+</html>

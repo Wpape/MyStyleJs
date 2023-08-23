@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .actice {
+            background-color: yellow;
+        }
+        .after::after{
+            content: '';
+            height: 0;
+            width: 100%;
+            border: 1px solid red;
+            position: absolute;   
+            left: -2px;
+            bottom: -10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box"></div>
+</html>
+<script>
+    var box = document.getElementById("box");
+    var num = 0;
+
+
+    box.onclick = function (el) {
+        num++
+
+        //方法1
+        // box.classList.toggle('actice');
+
+        //方法2
+        // if(num % 2 == 0){
+        //     this.style.backgroundColor = 'yellow'
+        // }else{
+        //     this.style.backgroundColor = 'blue'
+        // }
+
+        //方法3
+        var array = box.classList;
+        array.forEach(function (item, index, arr) {
+            if (arr[index] == 'actice') {
+                array.remove('actice');
+            } else {
+                array.add('actice')
+            }
+        })
+    }
+    //初始条件
+    box.classList.add('actice');
+
+
+
+    function suiJi(m, n) {
+        return m + parseInt(Math.random() * (n - m + 1))
+    }
+    function yanSe() {
+        var result = "#"
+        for (var i = 0; i < 6; i++) {
+            result += suiJi(0, 15).toString(16)
+        }
+        return result;
+    }
+</script>
+<script src="./01onclick.js"></script>

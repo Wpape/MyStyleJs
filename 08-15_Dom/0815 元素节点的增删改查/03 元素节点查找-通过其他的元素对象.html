@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<div class="top">
+			<ul class="list">
+				<li class="item">1</li>
+				<li class="item active">2</li>
+				<li class="item">3</li>
+			</ul>
+		</div>
+		<nav class="nav">
+			<ul class="nav-list">
+				<li class="item active">item1</li>
+				<li class="item">item2</li>
+				<li class="item">item3</li>
+				<li class="item">item4</li>
+				<li class="item">item5</li>
+				<li class="item">item6</li>
+			</ul>
+		</nav>
+
+		<script>
+      // 找标签：
+      // 1、直接使用document对象调用方法查找；
+      // 通过document对象调用方法：可以使用 querySelector/querySelectorAll/getElementsByClassName/getElementsByTagName /getElementById/ getElementsByName
+
+      // document.querySelector
+      // document.querySelectorAll
+      // document.getElementById
+      // document.getElementsByClassName
+      // document.getElementsByTagName
+      // document.getElementsByName
+
+
+      // 2、先找到父元素，然后使用父元素代替document调用方法查找
+      // 通过元素对象调用方法：可以使用  querySelector/querySelectorAll/   getElementsByClassName/getElementsByTagName
+			var nav = document.querySelector('.nav');
+			var active = nav.querySelector('.active');
+
+      // nav.querySelector
+      // nav.querySelectorAll
+      // nav.getElementsByClassName
+      // nav.getElementsByTagName
+
+      
+
+			// var active = document.querySelector('.nav .nav-list .active');
+			// console.log('active: ', active);
+			active.style.color = 'red';
+		</script>
+	</body>
+</html>

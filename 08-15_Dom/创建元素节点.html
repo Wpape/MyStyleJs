@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li class="item1">item1</li>
+            <li class="item2">item2</li>
+            <li class="item3">item3</li>
+            <li class="item4">item4</li>
+            <li class="item5">item5</li>
+            <li class="item6">item6</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var ulId = document.querySelector('ul');
+    var ulIdChild = ulId.children
+    var liId = document.createElement('li');
+    liId.innerHTML = `<h1>增添元素</h1>`;
+    ulId.append('append添加的字符串');//为当前节点元素添加一个或多个子节点，允许添加字符串
+    ulId.appendChild(liId);//放在元素最后的位置，只能添加子节点
+    ulId.prepend('liId');//放在元素第一的位置，添加一个或多个子节点，允许添加字符串
+    console.log('',ulId);
+    for(let i = 0;i<ulIdChild.length;i++){
+        // ulIdChild[i].innerHTML = i+1
+        console.log('ulIdChild[i]: ', ulIdChild[i]);
+    }
+
+    //insertBefore(newChild,item)  在父元素插入新的元素，可以在父元素内部任意位置
+    //参数1：要添加的元素；参数2：父元素内部的子元素，如果存在参数2，新的元素放在参数2前面；如果参数2为null，作用等价于appendChild
+    ulId.insertBefore(liId,null);
+
+    //删除父元素内部的某个子元素
+    ulId.removeChild(ulIdChild[3])
+</script>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			// str = str.replace('g', 'G');
+
+			// 方法1：多次执行替换
+			// console.time();
+			// var str = 'give me some sunshine give me some rain give me another chance i wanna grow up once again';
+			// for (var i = 0; i < str.length; i++) {
+			// 	str = str.replace('g', 'G');
+			// }
+			// console.log('str: ', str);
+			// console.timeEnd();
+
+			// 方法2：当不包含字母g的之后停止替换
+			// console.time();
+			// var str = 'give me some sunshine give me some rain give me another chance i wanna grow up once again';
+			// while (true) {
+			// 	str = str.replace('g', 'G');
+			// 	if (!str.includes('g')) {
+			// 		break;
+			// 	}
+			// }
+			// console.log('str: ', str);
+			// console.timeEnd();
+
+			// 方法3：找到有多少个字母g，有多少个，替换多少次
+			// var str = 'give me some sunshine give me some rain give me another chance i wanna grow up once again';
+			// var arr = str.split('g');
+			// for (var i = 0; i < arr.length - 1; i++) {
+			// 	str = str.replace('g', 'G');
+			// }
+			// console.log('str: ', str);
+
+			// 方法4：找到单个字符替换为大写字母，最后用新的变量拼接出字符串
+			// var str = 'give me some sunshine give me some rain give me another chance i wanna grow up once again';
+			// var res = '';
+			// for (var i = 0; i < str.length; i++) {
+			// 	var ch = str[i];
+			// 	if (ch === 'g') {
+			// 		ch = ch.replace('g', 'G');
+			// 	}
+			// 	res += ch;
+			// 	// console.log('ch: ', ch);
+			// }
+			// console.log('res: ', res);
+
+			// var str = 'give me some sunshine give me some rain give me another chance i wanna grow up once again';
+			// var result = str.replace(/g/g, 'G');
+			// result = str.replaceAll('g', 'G');
+			// console.log(result);
+
+			// var obj = {
+			// 	name: '张三111',
+			// };
+			// // 判断name的值是否是张三
+			// // console.log(obj.name);
+			// if (obj.name === '张三') {
+			// 	console.log('是张三');
+			// }
+			// if (obj.name.indexOf('张三') > -1) {
+			// 	console.log('是张三');
+			// }
+			// if (obj.name.includes('张三')) {
+			// 	console.log('是张三');
+			// }
+
+			// var str = 'give me some sunshine give me some rain give me another chance i wanna grow up once again';
+			// 统计上述字符串str中出现次数最多的字母是什么
+			// 把字符串转成对象的结构: 对象的属性名是字母，属性值是该字母的个数，空格忽略掉
+			// var obj = {
+			// 	a: 6,
+			// 	c: 2,
+			// 	d: 100,
+			// 	n: 20,
+			// };
+		</script>
+	</body>
+</html>

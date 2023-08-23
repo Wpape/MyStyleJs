@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			// 通常使用 toFixed 方法给数字保留几位小数，取的是四舍五入的值。
+			var num = 3.1465;
+			console.log(num.toFixed(2));
+
+      console.log(parseInt('111aaa'));
+      console.log(Number.parseInt('111aaa'));
+
+
+      // 只有0、''、null、undefined、NaN 转为布尔值是false，其他都是true
+      // 所有的对象（复杂数据类型）转为布尔值都是true
+      // open是一个对象，对象的值是false
+      // 永远不要使用布尔对象作为判断条件
+      var open = new Boolean(false);
+      console.log('open: ', open);
+      if (open) {
+        console.log('open');
+      }
+		</script>
+	</body>
+</html>

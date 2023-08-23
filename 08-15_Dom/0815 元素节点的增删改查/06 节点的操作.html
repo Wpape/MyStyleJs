@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<nav class="nav">
+			<ul class="nav-list">
+				<li class="item">item1</li>
+				<!-- <div>div</div> 注释的内容 -->
+				<li class="item">item2</li>
+				<li class="item active">item3</li>
+				<li class="item">item4</li>
+				<li class="item">item5</li>
+				<li class="item">item6</li>
+			</ul>
+		</nav>
+		<script>
+			// 节点：包含元素节点、文本节点、属性节点、注释节点、文档节点
+			var ul = document.querySelector('.nav-list');
+			console.log(ul.nodeType); // 获取节点的类型，元素节点返回值是数字1，对应 Node.ELEMENT_NODE
+			console.log(ul.nodeName); // 获取节点的名称，元素节点返回的是大写的标签名
+			console.log(ul.textContent); // 获取/修改标签的文本内容
+
+			var active = ul.querySelector('.active');
+			console.log(active.textContent);
+			active.textContent = '项目3';
+
+			// console.log(ul.parentNode); // 父节点
+			// console.log(ul.childNodes); // 子节点：可能包含元素节点、文本节点、属性节点、注释节点等
+			// for (var i = 0; i < ul.childNodes.length; i++) {
+			// 	var node = ul.childNodes[i];
+			// 	console.log('节点类型 nodeType: ', node.nodeType);
+			// 	console.log('节点名称 nodeName: ', node.nodeName);
+			// 	console.log('节点的值 nodeValue: ', node.nodeValue);
+			// 	console.log('节点的值 textContent: ', node.textContent);
+			// }
+		</script>
+	</body>
+</html>

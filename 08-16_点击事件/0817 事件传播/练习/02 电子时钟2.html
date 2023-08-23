@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Jxz" />
+		<title>电子时钟</title>
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
+
+			main {
+				width: 800px;
+				height: 800px;
+				margin: 0 auto;
+				background-image: url(images/clock.jpg);
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+			}
+
+			.hour {
+				width: 10px;
+				height: 400px;
+				position: absolute;
+				top: calc(50% - 200px);
+				left: calc(50% - 5px);
+			}
+
+			.hour > span {
+				display: inline-block;
+				width: 10px;
+				height: 220px;
+				background-color: red;
+				border-radius: 5px;
+			}
+
+			.minute {
+				width: 6px;
+				height: 500px;
+				/*background-color: green;*/
+				position: absolute;
+				top: calc(50% - 250px);
+				left: calc(50% - 3px);
+			}
+
+			.minute > span {
+				display: inline-block;
+				width: 6px;
+				height: 280px;
+				background-color: green;
+				border-radius: 3px;
+			}
+
+			.second {
+				width: 3px;
+				height: 600px;
+				position: absolute;
+				top: calc(50% - 300px);
+				left: calc(50% - 1.5px);
+			}
+
+			.second > span {
+				display: inline-block;
+				width: 3px;
+				height: 350px;
+				background-color: blue;
+				border-radius: 1.5px;
+			}
+
+			.point {
+				width: 30px;
+				height: 30px;
+				background-color: #000;
+				border-radius: 50%;
+				position: absolute;
+				top: calc(50% - 15px);
+				left: calc(50% - 15px);
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<section class="hour"><span></span></section>
+			<section class="minute"><span></span></section>
+			<section class="second"><span></span></section>
+			<section class="point"></section>
+		</main>
+		<script>
+			var hourBox = document.querySelector('.hour');
+			var minuteBox = document.querySelector('.minute');
+			var secondBox = document.querySelector('.second');
+			// 通过延迟时间控制时分秒的指针开始的位置
+
+			function update() {
+				var now = new Date();
+				var seconds = now.getSeconds();
+				var minutes = now.getMinutes();
+				var hours = now.getHours();
+
+				console.log('minutes: ', minutes);
+				// console.log('seconds: ', seconds);
+				// 控制时针的跳动：时针走一圈是43200秒，走一圈需要跳43200次
+				// 时针一秒钟跳多少度：跳一圈是360度，需要跳43200次，跳一次是360/43200度
+
+				hourBox.style.transform = 'rotate(' + ((hours * 3600 + minutes * 60 + seconds) * 360) / 43200 + 'deg)';
+
+				// 控制时分秒指针的跳动：分针走一圈是3600秒，走一圈需要跳3600次
+				// 分针：一分钟跳多少度：跳一圈是360度，需要跳60次，跳一次是360/60=6度
+				// minuteBox.style.transform = 'rotate(' + minutes * 6 + 'deg)';
+				// 分针一秒钟跳多少度：跳一圈是360度，需要跳3600次，跳一次是360/3600=0.1度
+				minuteBox.style.transform = 'rotate(' + (minutes * 60 + seconds) * 0.1 + 'deg)';
+
+				// 控制分钟的跳动：秒针走一圈是60秒，走一圈需要跳60次
+				// 秒针：一秒钟跳多少度：跳一圈是360度，需要跳60次，跳一次是360/60=6度
+				// 秒数为0，跳0度
+				// 秒数为1，跳6度
+				// 秒数为2，跳12度
+				secondBox.style.transform = 'rotate(' + seconds * 6 + 'deg)';
+			}
+			update();
+			setInterval(update, 1000);
+		</script>
+	</body>
+</html>

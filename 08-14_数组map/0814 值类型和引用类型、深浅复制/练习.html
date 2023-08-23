@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			// 年龄不小于18岁，并且是在线状态，添加一个属性：sign: '赶紧出来浪'
+			// 年龄不小于18岁，并且是非在线状态，添加一个属性：sign: '赶快来摸鱼'
+			// 其余，添加一个属性：sign: '我是中国好青年'
+			var friends = [
+				{ name: '张三', age: 18, online: true },
+				{ name: '李四', age: 16, online: false },
+				{ name: '王五', age: 20, online: true },
+				{ name: '李明', age: 20, online: false },
+				{ name: '花花', age: 16, online: true },
+			];
+
+			var res = friends.map(function (o) {
+				if (o.age >= 18 && o.online) {
+					o.sign = '赶紧出来浪';
+				} else if (o.age >= 18 && !o.online) {
+					// 等价于 o.age>=18 && o.online===false
+					o.sign = '赶快来摸鱼';
+				} else {
+					o.sign = '我是中国好青年';
+				}
+				o.v10 = 10;
+				return o;
+			});
+			console.log('res: ', res);
+			console.log('friends: ', friends);
+
+			// var arr = [{ v1: 10 }, { v2: 20 }, { v3: 30 }];
+			// function map(fn) {
+			// 	for (var i = 0; i < arr.length; i++) {
+			// 		var obj = arr[i];
+			// 		fn(obj);
+			// 	}
+			// }
+			// map(function (o) {
+			// 	o.v11 = 11;
+			// });
+			// console.log('arr: ', arr);
+
+			// var arr = [{ v1: 10 }, { v2: 20 }, { v3: 30 }];
+			// for(var i = 0; i < arr.length; i++){
+			//   var obj = arr[i];// 把数组中存放对象的内存地址复制给obj
+			//   obj.v12 = 11;// 改变了obj对象，就相当于改变了数组中的对象
+			// }
+		</script>
+	</body>
+</html>

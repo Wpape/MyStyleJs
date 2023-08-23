@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			var SEC = 1;
+			var MIN = 60 * SEC;
+			var HOU = 60 * MIN;
+			var DAY = 24 * HOU;
+
+      // var time = Math.floor((new Date('2023 10 1').getTime()- new Date().getTime())/1000);
+
+      // 计算天数: 用秒数对一天占用的秒数86400取整，得到天数
+      // var time = 95680;
+      console.log(Math.floor(time/DAY));
+
+			// 计算小时数；使用秒数对3600取整，得到小时数
+			// 如果时间超没有超过一天，直接对小时数占用的秒数取整  time/3600
+			// var time = 9568;
+			// console.log(Math.floor(time / HOU));
+			// 如果时间超超过一天，先把一天占用的秒数去掉，然后对小时数占用的秒数取整
+			// var time = 95680;
+			// console.log(time % DAY);
+			console.log(Math.floor((time % DAY) / HOU));
+
+			// 计算分钟数: 使用秒数对60取整，得到就是分钟数
+			// 如果时间超没有过3600，直接对分钟占用的秒数取整  time/60
+			// var time = 2568;
+			// var minutes = Math.floor(time / MIN);
+			// console.log('minutes: ', minutes);
+
+			// 如果时间超过了3600，先要把小时数占用的秒数去掉，然后使用秒数对60取整
+			// var time = 5568;
+			// console.log(time % HOU); // 对3600求余，要把小时数占用的秒数去掉
+			console.log(Math.floor((time % HOU) / MIN));
+
+			// 计算秒数：把分钟数占用的秒数去掉，剩余的就是秒数
+			// var time = 9568;
+			console.log(time % MIN);
+      
+		</script>
+
+
+	</body>
+</html>

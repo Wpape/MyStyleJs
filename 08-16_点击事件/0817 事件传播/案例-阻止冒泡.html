@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			nav {
+				line-height: 50px;
+				height: 50px;
+				background-color: lightblue;
+			}
+			.w {
+				width: 600px;
+				margin: auto;
+			}
+			.address {
+				width: 50px;
+				background-color: red;
+				position: relative;
+			}
+			.sublist {
+				width: 100px;
+				height: 200px;
+				background-color: rgb(152, 152, 155);
+				position: absolute;
+				top: 50px;
+				left: 0;
+				display: none;
+			}
+			.close {
+				display: inline-block;
+				background-color: orange;
+				cursor: pointer;
+				width: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="w">
+				<div class="address">
+					<span class="city">郑州</span>
+					<div class="sublist">
+						<i class="close">&times;</i>
+						<div class="item">北京</div>
+						<div class="item">南京</div>
+						<div class="item">广州</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<script>
+			var address = document.querySelector('.address');
+			var sublist = document.querySelector('.sublist');
+			var close = document.querySelector('.close');
+			var city = document.querySelector('.city');
+			var items = document.querySelectorAll('.item');
+			// 点击address处让sub显示
+			address.onclick = function (ev) {
+				console.log('address');
+				// 阻止事件冒泡，点击address的时候，不让事件冒泡到document
+				ev.stopPropagation();
+
+				sublist.style.display = 'block';
+			};
+
+			close.onclick = function (ev) {                                                                        
+				console.log('close');
+				// 阻止事件冒泡，点击close的时候，不让事件冒泡到address
+				ev.stopPropagation();
+				sublist.style.display = 'none';
+			};
+
+			// 点击空白处让sub隐藏
+			document.onclick = function () {
+				console.log('document');
+				sublist.style.display = 'none';
+			};
+
+      for(var i = 0; i < items.length; i++){
+        items[i].onclick = function (ev) {
+          console.log(this.innerHTML);
+          city.innerHTML = this.innerHTML;
+          sublist.style.display = 'none';
+          ev.stopPropagation();
+        }
+      }
+		</script>
+	</body>
+</html>

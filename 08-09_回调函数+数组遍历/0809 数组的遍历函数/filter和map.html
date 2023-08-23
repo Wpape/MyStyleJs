@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			// 把数组中的偶数放到一个数组中
+
+			// filter 筛选：让数组的元素参与某种运算，使用return返回运算是结果
+			// 如果运算的结果为true，把item存入新的数组res
+			// 如果运算的结果为false，不会把item存入新的数组res
+			var res = nums.filter(function (item, index) {
+				// return item % 2 === 0;
+				return true;
+			});
+			console.log('res: ', res);
+
+			// map 映射：让数组的元素参与某种运算，使用return把运算的结果返回到新的数组res中
+			var res = nums.map(function (item, index) {
+				return item ** 2;
+				// return 100;
+			});
+			console.log('res: ', res);
+
+			var arr = [
+				{ name: '张三', age: 18 },
+				{ name: '李四', age: 20 },
+			];
+			var res = arr.map(function (item, index) {
+				// console.log('item: ', item);
+				item.weight = 100;
+				return item;
+
+				// var obj = item;
+				// obj.weight = 100;
+				// return obj;
+			});
+			console.log('res: ', res);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			/* .active ~ .item {
+				color: red;
+			} */
+			.active + .item {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="nav">
+			<ul class="nav-list">
+				<li class="item">item1</li>
+				<div>div</div>
+				<li class="item">item2</li>
+				<li class="item active">item3</li>
+				<li class="item">item4</li>
+				<li class="item">item5</li>
+				<li class="item">item6</li>
+			</ul>
+		</nav>
+		<script>
+			// 元素的节点的遍历：以某个元素为基础，向上查找父元素 parent，向下查找子元素 child，同级之间查找兄弟元素 sibling
+
+			var ul = document.querySelector('.nav-list');
+			// 1、向上遍历：找父级元素
+			console.log(ul.parentElement); // nav
+			// console.log(ul.parentElement.parentElement); // body
+			// console.log(ul.parentElement.parentElement.parentElement); // html
+			// console.log(ul.parentElement.parentElement.parentElement.parentElement); // null
+
+			// 2、向下遍历：找子元素
+			// 找到所有的元素节点
+			console.log(ul.children);
+
+			// 获取子元素节点的个数
+			console.log(ul.children.length);
+			console.log(ul.childElementCount);
+
+			// 找第一个元素节点
+			console.log(ul.firstElementChild);
+			console.log(ul.children[0]);
+
+			// 找最后一个元素节点
+			console.log(ul.lastElementChild);
+			console.log(ul.children[ul.children.length - 1]);
+			console.log(ul.children[ul.childElementCount - 1]);
+
+			// 3、同级遍历
+			var active = ul.querySelector('.active');
+			// 相邻的上一个元素
+			console.log(active.previousElementSibling);
+			// 相邻的下一个元素
+			console.log(active.nextElementSibling);
+		</script>
+	</body>
+</html>

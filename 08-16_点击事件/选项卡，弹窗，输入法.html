@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+			.w {
+				width: 600px;
+				margin: auto;
+			}
+			.address,.info{
+				width: 100px;
+                padding: 10px 0;
+                text-align: center;
+				background-color: red;
+				position: relative;
+			}
+			.sublist {
+				width: 100px;
+				background-color: rgb(152, 152, 155);
+				position: absolute;
+				top: 60px;
+				left: 0;
+                display: none;
+			}
+            .sublist .item{
+                padding: 20px 0;
+            }
+            .sublist :nth-last-child(){
+                border-top: 1px solid black;
+            }
+            .sublist :last-child{
+                border-top: 1px solid black;
+            }
+			.close {
+				display: inline-block;
+				background-color: orange;
+				cursor: pointer;
+				width: 60px;
+			}
+            .box{
+                width: 500px;
+                border: 4px solid orange;
+                display: none;
+            }
+            .tophead{
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                text-align: end;
+                background-color: orange;
+            }.removeclass{
+                padding: 0 20px;
+                font-size: 20px;
+                cursor: pointer;
+            }.bodydiv{
+                width: 100%;
+                height: 200px;
+            }.boxnth{
+                width: 600px;
+                border: 1px solid black;
+            }.nthnav{
+                width: 100%;
+                height: 30px;
+                display: flex;
+                justify-content: space-around;
+            }.textnav{
+                width: 100%;
+                height: 400px;
+            }
+    </style>
+</head>
+<body>
+    <button onclick="alickFun()">弹出框</button>
+    <div class="box">
+        <div class="tophead">
+            <i class="removeclass">&times;</i>
+        </div>
+        <div class="bodydiv"></div>
+    </div>
+    <div class="info">
+        <div class="address">
+            <span class="city">输入法</span>
+        </div>
+        <div class="sublist">
+            <div class="item">手写</div>
+            <div class="item">拼音</div>
+            <div class="item">关闭</div>
+        </div>
+    </div>
+    <div class="boxnth">
+        <button onclick="nthList()">开始运行</button>
+        <div class="nthnav"></div>
+        <div class="textnav"></div>
+    </div>
+</body>
+</html>
+<script>
+    //输入法
+    var addressId = document.querySelector('.address');
+    var itemList = document.querySelectorAll('.item');
+    var getup = document.querySelector('.box');
+    var subId = document.querySelector('.sublist');
+    var removeI = document.querySelector('.removeclass')
+    addressId.onclick = function(ev){
+        subId.style.display = 'block'
+       
+        //阻止事件冒泡
+        ev.stopPropagation();
+    }
+    for(let i=0;i<itemList.length;i++){
+        itemList[i].onclick = function(){
+            // console.log('',this);
+           if(this.innerHTML == '关闭'){
+            subId.style.display = 'none'
+           }else{
+            addressId.innerHTML = this.innerHTML
+           }
+        }
+    }
+    document.onclick = function(){
+        subId.style.display = 'none'                                                      
+    }
+    removeI.onclick
+    //带有遮罩层的弹窗
+function alickFun(){
+    getup.style.display = 'block'
+}
+removeI.addEventListener(
+'click',
+function(){
+    getup.style.display = ''
+},
+false    
+)
+
+//简易的选项卡
+function nthList(){
+    var nthId = document.querySelector('.nthnav')
+var textId = document.querySelector('.textnav');
+for(let i = 0;i<3;i++){
+var spanId = document.createElement('span');
+spanId.innerText = `第${i+1}节`;
+spanId.dataset.index = i;
+spanId.onclick = spanIdFn
+nthId.append(spanId);
+}
+var ulId = document.createElement('ul');
+for(let i = 0;i<10;i++){
+        var liId = document.createElement('li');
+        liId.style.display = 'none'
+        ulId.append(liId);
+textId.appendChild(ulId)
+    }
+function spanIdFn(){
+    var lilist = document.querySelectorAll('li');
+    for(let i = 0;i<lilist.length;i++){
+        lilist[i].style.display = 'block'
+        lilist[i].innerText = `这是第${this.dataset.index*1+1}节${i+1}`;
+    }
+}
+}
+
+</script>

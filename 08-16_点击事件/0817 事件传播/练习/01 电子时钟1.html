@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Jxz" />
+		<title>电子时钟</title>
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
+
+			main {
+				width: 800px;
+				height: 800px;
+				margin: 0 auto;
+				background-image: url(images/clock.jpg);
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+			}
+
+			.hour {
+				width: 10px;
+				height: 400px;
+				position: absolute;
+				top: calc(50% - 200px);
+				left: calc(50% - 5px);
+
+				animation-name: rotates;
+				animation-duration: 43200s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+			}
+
+			.hour > span {
+				display: inline-block;
+				width: 10px;
+				height: 220px;
+				background-color: red;
+				border-radius: 5px;
+			}
+
+			.minute {
+				width: 6px;
+				height: 500px;
+				/*background-color: green;*/
+				position: absolute;
+				top: calc(50% - 250px);
+				left: calc(50% - 3px);
+
+				animation-name: rotates;
+				animation-duration: 3600s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+			}
+
+			.minute > span {
+				display: inline-block;
+				width: 6px;
+				height: 280px;
+				background-color: green;
+				border-radius: 3px;
+			}
+
+			.second {
+				width: 3px;
+				height: 600px;
+				position: absolute;
+				top: calc(50% - 300px);
+				left: calc(50% - 1.5px);
+
+				animation-name: rotates;
+				animation-duration: 60s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+			}
+
+			.second > span {
+				display: inline-block;
+				width: 3px;
+				height: 350px;
+				background-color: blue;
+				border-radius: 1.5px;
+			}
+
+			.point {
+				width: 30px;
+				height: 30px;
+				background-color: #000;
+				border-radius: 50%;
+				position: absolute;
+				top: calc(50% - 15px);
+				left: calc(50% - 15px);
+			}
+
+			@keyframes rotates {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<section class="hour"><span></span></section>
+			<section class="minute"><span></span></section>
+			<section class="second"><span></span></section>
+			<section class="point"></section>
+		</main>
+		<script>
+			var hourBox = document.querySelector('.hour');
+			var minuteBox = document.querySelector('.minute');
+			var secondBox = document.querySelector('.second');
+			// 通过延迟时间控制时分秒的指针开始的位置
+
+			var now = new Date();
+			var seconds = now.getSeconds();
+			var minutes = now.getMinutes();
+			var hours = now.getHours();
+
+			// 时针的延迟:延迟当前时间的小时数、分钟数和秒数：小时数、分钟数和秒数转化为秒
+			hourBox.style.animationDelay = -(hours * 3600 + minutes * 60 + seconds) + 's';
+
+			// 分针的延迟：延迟当前时间的分钟数和秒数：分钟数和秒数都要转化为秒数
+			minuteBox.style.animationDelay = -(minutes * 60 + seconds) + 's';
+
+			// 秒针的延迟：延迟当前时间的秒数
+			secondBox.style.animationDelay = -seconds + 's';
+		</script>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			.nav-list {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				display: flex;
+				line-height: 50px;
+				background-color: lightblue;
+			}
+			.item {
+				padding: 0 20px;
+			}
+
+			.active {
+				color: red;
+			}
+
+			.content .list {
+				display: none;
+			}
+			.content .show {
+				display: block;
+			}
+			.hide {
+				display: none !important;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="nav-list">
+			<li class="item active">选项1</li>
+			<li class="item">选项2</li>
+			<li class="item">选项3</li>
+			<li class="item">选项4</li>
+			<li class="item">选项5</li>
+			<li class="item">选项6</li>
+		</ul>
+		<div class="content">
+			<div class="list show">列表1</div>
+			<div class="list">列表2</div>
+			<div class="list">列表3</div>
+			<div class="list">列表4</div>
+			<div class="list">列表5</div>
+			<div class="list">列表6</div>
+		</div>
+		<script>
+			var items = document.querySelectorAll('.item');
+			var lists = document.querySelectorAll('.list');
+
+			for (var i = 0; i < items.length; i++) {
+				var item = items[i];
+				item.index = i;
+				item.onclick = function () {
+					for (var i = 0; i < items.length; i++) {
+						items[i].classList.remove('active');
+						lists[i].style.display = 'none';
+					}
+
+					this.classList.add('active');
+					lists[this.index].style.display = 'block';
+				};
+			}
+
+			// for (var i = 0; i < items.length; i++) {
+			// 	var item = items[i];
+			//   item.index = i;
+			// 	item.onclick = function () {
+			// 		// 变红的效果
+			// 		// 第一步：找到所有的item，让他们都变为黑色：移除active类名
+			// 		for (var i = 0; i < items.length; i++) {
+			// 			items[i].classList.remove('active');
+			// 		}
+
+			// 		// 第二步：最终点击谁，让谁变红：添加active类名
+			// 		this.classList.add('active');
+
+			// 		// 显示隐藏的效果
+			// 		// 第一步：让所有的list都隐藏
+			// 		for (var i = 0; i < lists.length; i++) {
+			// 			lists[i].style.display = 'none';
+			// 		}
+			// 		// 第二步：根据被点击元素的索引值，使用索引值从list中找到一个需要显示的元素
+			//     lists[this.index].style.display = 'block';
+			// 	};
+			// }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			// var a = null;
+			// console.log(a+'11);
+			// null.toString();
+			// console.log(a);
+
+			// var error = new Error('变量a未定义');
+			// var error = new TypeError('变量a未定义');
+			// console.dir(error)
+
+			// throw error;
+
+			var obj = {
+				name: '张三',
+			};
+
+			// if (obj.run && typeof obj.run === 'function') {
+			// 	obj.run();
+			// }
+
+      var name = obj.name;
+
+			try {
+        // 把可能出错的代码放在try中尝试执行，如果超成功执行，catch什么都不做；如果执行出错，不到导致程序终止，catch会捕获错误
+				obj.run();
+			} catch (error) {
+				console.log('error: ', error);
+			} finally{
+        // 收尾的工作：无论try中的代码是否成功执行，finally中的代码都会执行，可以执行收尾：关闭数据库、清空定时器
+        console.log('----');
+      }
+
+			console.log('123123');
+		</script>
+	</body>
+</html>

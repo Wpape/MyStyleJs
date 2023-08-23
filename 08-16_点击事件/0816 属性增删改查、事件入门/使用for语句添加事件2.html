@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			li {
+				background-color: lightblue;
+				margin: 10px;
+			}
+			a {
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="">选项1</a></li>
+			<li><a href="">选项2</a></li>
+			<li><a href="">选项3</a></li>
+			<li><a href="">选项4</a></li>
+			<li><a href="">选项5</a></li>
+			<li><a href="">选项6</a></li>
+		</ul>
+		<script>
+			// 点击不同的选项，得到不同的索引值：0 1 2
+
+			var lis = document.querySelectorAll('li');
+			// var i = 0;
+
+			// 事件和定时器一样都是异步操作
+			// log语句、if语句、for语句都是同步操作
+			// 当执行事件触发，执行事件函数的时候，for语句是否结束？
+			// 当执行事件函数的时候，for语句已经结束，当for语句结束的时候i的值是6
+			// 在事件函数中打印i的值是多少？永远都是6
+      // 结论：不能在for语句添加的事件中使用i的值
+
+			for (var i = 0; i < lis.length; i++) {
+				var li = lis[i];
+        li.index = i;// 给元素对象添加一个属性index，既然是对象的属性，可以使用元素对象打点调用
+        console.dir(li);
+				li.onclick = function () {
+					console.log(this.index);
+				};
+			}
+
+			// var i = 0;
+			// var li = lis[i];
+			// li.onclick = function () {
+			// 	console.log('i: ', i);
+			// };
+			// i = 1;
+			// var li = lis[i];
+			// li.onclick = function () {
+			// 	console.log('i: ', i);
+			// };
+			// i = 2;
+			// var li = lis[i];
+			// li.onclick = function () {
+			// 	console.log('i: ', i);
+			// };
+		</script>
+	</body>
+</html>

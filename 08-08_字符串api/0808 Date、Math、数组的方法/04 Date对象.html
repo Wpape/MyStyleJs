@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			// setInterval(function () {
+			// 	var now = new Date();
+			// 	console.log('now: ', now);
+			// }, 1000);
+
+			// 获取当前时间：
+			var now = new Date();
+			console.log('now: ', now, typeof now);
+			// console.log(now.toString());
+			// console.log(now.toLocaleDateString());
+			// console.log(now.toLocaleTimeString());
+
+			// 给Date传递一个固定格式的时间参数，可以获取指定的时间
+			console.log(new Date('2023 8 8 16:12:10'));
+			console.log(new Date('2023/8/8 16:12:10'));
+			console.log(new Date('2023-8-8 16:12:10'));
+			console.log(new Date(1691465328279));
+			// 月份从0开始，0是一月，1是二月
+			console.log(new Date(2023, 7, 8, 16, 12, 10));
+
+			// 返回当前时间的毫秒数
+			console.log(Date.now());
+
+			// 返回指定事时间的毫秒数
+			console.log(now.getTime());
+
+			console.log(now.getFullYear()); // 获取年
+			console.log(now.getMonth() + 1); // 获取月份，月份从0开始，0是一月，1是二月
+			console.log(now.getDate());// 获取这月的第几天
+			console.log(now.getDay());// 获取星期，从0开始，0是星期天，1是星期一，2是星期二
+      console.log(now.getHours());// 小时数
+      console.log(now.getMinutes());// 分钟数
+      console.log(now.getSeconds());// 秒数
+      console.log(now.getMilliseconds());// 毫秒
+
+			var target = new Date('2023 10 1');
+			// 得到距离十月一的秒数：转为月，天，时，分，秒
+			console.log(Math.floor((target.getTime() - now.getTime()) / 1000));
+
+      // 倒计时：给一个固定的秒数time=256，每隔1秒让time减1，同时把time转为时分秒的格式
+
+		</script>
+	</body>
+</html>

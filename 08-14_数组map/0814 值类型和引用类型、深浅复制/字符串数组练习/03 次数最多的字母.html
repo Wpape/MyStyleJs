@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			var str = 'give me some sunshine give me some rain give me another chance i wanna grow up once again';
+
+			var obj = {};
+			for (var i = 0; i < str.length; i++) {
+				var ch = str.charAt(i);
+				if (ch == ' ') {
+					continue;
+				}
+				if (obj[ch] === undefined) {
+					// 如果ch字符的值作为obj对象的属性名，第一次出现，属性值直接给1
+					obj[ch] = 1;
+				} else {
+					// 如果ch字符的值作为obj对象的属性名，不是第一次出现，让属性值加1
+					obj[ch] += 1;
+				}
+			}
+			console.log('obj: ', obj);
+
+			var max = -1,
+				ch;
+			for (var key in obj) {
+				if (obj[key] > max) {
+					max = obj[key];
+					ch = key;
+				}
+			}
+			console.log(ch, max);
+
+			// var o = {
+			//   a:1
+			// }
+			// var ch = 'a';
+			// // 让属性a的值加1
+			// o[ch] = o[ch] + 1;
+			// o[ch] += 1;
+			// o[ch]++;
+			// console.log(o[ch]);
+			// console.log('o: ', o);
+
+			var str = 'my-first-friend-lucky-man';
+			var arr = str.split('-');
+			var newStr = '';
+			for (var i = 0; i < arr.length; i++) {
+        var s = arr[i];
+				newStr += s.replace(s[0], s[0].toUpperCase());
+        if (i < arr.length - 1) {
+          newStr+='-'
+        }
+
+				// arr[i] = s.replace(s[0], s[0].toUpperCase());
+			}
+      // console.log('arr: ', arr.join('-'));
+			console.log('newStr: ', newStr);
+			// var s = 'hello';
+			// console.log(s.replace(s[0], s[0].toUpperCase()));
+
+		</script>
+	</body>
+</html>

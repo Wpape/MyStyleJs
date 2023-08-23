@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			// 判断数组中是否有数字6
+			console.log(nums.includes(6));
+
+			var friends = [
+				{ name: '张三', age: 18, online: false },
+				{ name: '李四', age: 16, online: false },
+				{ name: '王五', age: 20, online: true },
+				{ name: '李明', age: 20, online: false },
+				{ name: '花花', age: 16, online: true },
+			];
+			// 1、找到数组中第一个在线的用户
+			// find:查找数组中第一个符合条件的元素，如果没有最终返回undefined
+
+			// find：让数组的元素参与某种运算，使用return返回运算是结果
+			// 如果哪一项的运算结果为true，把这一项的item返回给res
+			// 如果没有一项符合条件，最终res的值是undefined
+
+			var res = friends.find(function (item) {
+				console.log('item: ', item);
+				return item.online === true;
+				// return false;
+			});
+			console.log('res: ', res);
+
+			// 2、找到数组中第一个在线用户的索引值
+
+			// findIndex:查找数组中第一个符合条件元素的索引值，如果没有，最终返回-1
+			// findIndex：让数组的元素参与某种运算，使用return返回运算是结果
+			// 如果哪一项的运算结果为true，把这一项的索引值返回给res
+			// 如果没有一项符合条件，最终res的值是-1
+			var res = friends.findIndex(function (item) {
+				console.log('item: ', item);
+				// return item.online === true;
+				return item.age < 15;
+				// return false;
+			});
+			console.log('res: ', res);
+		</script>
+	</body>
+</html>

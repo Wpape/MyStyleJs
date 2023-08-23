@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<script src="./lodash.js"></script>
+		<script src="./index1.js"></script>
+		<script src="./index2.js"></script>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			console.log(index1, index2);
+			// 复杂数据类型：对象、数组、函数、日期、数学对象等
+			// 函数属于复杂数据类型，函数也是一个值，作用于数字、字符串、布尔值一样
+			// 函数作为值可以赋值给变量、作为实参给其他函数传递值、作为return的返回值等等
+
+			function add(x, y) {
+				console.log('add: ', x, y);
+				return x + y;
+			}
+			// console.dir(add)
+			// console.log(add.name);
+
+			function some(fn) {
+				// console.log(fn.name);
+				return fn(100, 200);
+			}
+
+			var res = some(add);
+			console.log('res: ', res);
+
+			function f1() {
+				var x = 100,
+					y = 200;
+				// return function f2() {
+				// 	return x + y;
+				// };
+				var f2 = function () {
+					return x + y;
+				};
+				return f2;
+			}
+			var result = f1()();
+			// var res = f1();
+			// console.log(res.name);
+			// var result = res();
+			console.log('result: ', result);
+
+			// 匿名函数：
+			// 1、单独的使用的匿名函数，必须立即执行：可以在函数内部形成一个独立的作用域，避免内部的变量污染全局作用域
+			// 2、作为值赋值给他变量，省略函数的名字：函数表达式、函数作为参数
+			(function (x, y) {
+				console.log('x,y: ', x, y);
+			})(100, 200);
+
+			(function (x, y) {
+				console.log('x,y: ', x, y);
+			})(100, 200);
+
+			// arguments 是函数内部自带的隐式参数，是一个类数组的对象，有长度值，也有索引值
+			// 通过 arguments 可以实现任意数量的参数
+			function m1() {
+				console.log(arguments);
+				for (var i = 0; i < arguments.length; i++) {
+					var item = arguments[i];
+					console.log('item: ', item);
+				}
+
+        console.log(arguments.callee);
+			}
+
+			m1(10, 20, 30, 40, 50);
+
+			function m2(x, y) {
+        console.log('x, y: ', x, y);
+				arguments[0] = 100;
+				arguments[1] = 200;
+        console.log('x, y: ', x, y);
+				return x + y;
+			}
+			console.log(m2(1, 2));
+		</script>
+	</body>
+</html>

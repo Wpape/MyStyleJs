@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			div {
+				width: 200px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="box" title="div">div</div>
+		<img src="https://imgcps.jd.com/ling-cubic/ling4/lab/amZzL3QxLzIxNzE2OC83LzMyNDMwLzEwNjczMC82NGEzYjg5NUY0ZmUwZDkzZS82MzI5YmE0YmU2M2RhODM5LnBuZw/5Lqs6YCJ5aW96LSn/5L2g5YC85b6X5oul5pyJ/1635183971814293505/cr/s/q.jpg" alt="" />
+		<input type="text" id="input" name="username" placeholder="账号" value="张三" />
+		
+    <input type="checkbox" id="checkbox" name="" id="">
+    <script>
+			// 在obj对象中，name和age是obj对象的属性，只要是对象的属性，可以使用打点调用 或者 []运算符 获取/设置属性的值
+			// var obj = {
+			// 	name: '张三',
+			// 	age: 18,
+			// };
+      // obj.data = 100;
+			// console.log(obj.age);
+			// console.log(obj['age']);
+			// obj.age = 20;
+
+			// HTML 元素的标准属性（即在标准中定义的属性：理解为写写标签时，给标签添加的属性：id、src、title），会自动成为元素节点对象的属性。
+			var box = document.getElementById('box');
+			console.log(box.id);
+			box.id = 'box1';
+
+			box.style.backgroundImage = 'url(https://imgcps.jd.com/ling-cubic/ling4/lab/amZzL3QxLzExODM2NC8xNy8zNTAwNS83NzE5My82NDA3MTNmOEY4YjYyN2EzYi8yNzBjNDhhZmUwNWU4ZTAyLnBuZw/5Lqs6YCJ5aW96LSn/5L2g5YC85b6X5oul5pyJ/1635187410014105601/cr/s/q.jpg)';
+
+			var img = document.querySelector('img');
+			setTimeout(function () {
+				img.src = 'https://imgcps.jd.com/ling-cubic/ling4/lab/amZzL3QxLzExODM2NC8xNy8zNTAwNS83NzE5My82NDA3MTNmOEY4YjYyN2EzYi8yNzBjNDhhZmUwNWU4ZTAyLnBuZw/5Lqs6YCJ5aW96LSn/5L2g5YC85b6X5oul5pyJ/1635187410014105601/cr/s/q.jpg';
+			}, 1000);
+
+			var input = document.getElementById('input');
+			input.value = '';
+      input.placeholder = '用户名';
+			var input2 = document.getElementById('checkbox');
+      input2.checked = true;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			.box {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="box top left">div</div>
+
+		<script>
+			var box = document.getElementById('box');
+
+			// class是标准属性，可以直接打点使用，又因为class在js中表示类，所以在js不能直接使用class名，改为了className
+
+			// 使用`className`获取的类名是一个字符串，多个类名之间使用空格分隔，对类名的添加和删除不方便。
+			console.log(box.className); // "box top left"
+
+			// 给标签添加类名，如果直接写 = 会把原来的类名覆盖掉
+			// box.className = 'active';
+			// 同时添加多个类名，类名之间使用空格隔开
+			// box.className = 'active bottom';
+
+			// 使用字符串拼接的方式可以保留原来的类名
+			// box.className += ' active bottom';
+
+			// 删除类名
+			// box.className = box.className.replace('left', '').trim();
+			// box.className = box.className.replace('top', '').trim();
+			// var arr = box.className.split(' ');
+			// arr.splice(1,1)
+			// box.className = arr.join(' ');
+			// console.log(box.className);
+
+			// 清空类名
+			// box.className = '';
+
+			// 替换类名
+			// box.className = box.className.replace('left', 'right');
+
+			// 为了更加方便的操作类名，增加了classList
+			// classList 是一个类数组的结构，每一个类名都他的成员，也有自己的方法，用来操作类名
+			// console.log(box.classList);
+
+			// add 添加类名：参数就是类名，可以使用多个参数
+			// box.classList.add('active');
+			box.classList.add('active', 'right');
+
+      // remove 移除类名：参数就是类名，可以使用多个参数
+      // box.classList.remove('active');
+      box.classList.remove('active', 'right');
+
+      // toggle 开关效果：有则移除，没有则添加
+      // box.classList.toggle('active');
+      // 如果提供了第二个参数，tru指定添加类名；false指定移除类名
+      // box.classList.toggle('active', true);
+      // box.classList.toggle('active', false);
+
+      // contains 判断是否具有某个类名
+      console.log(box.classList.contains('box'));
+
+      // 获取类名
+      console.log(box.classList.item(0));
+      console.log(box.classList[0]);
+		</script>
+	</body>
+</html>

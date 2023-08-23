@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;padding: 0;
+    }
+</style>
+<body>
+    <div class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="home"><a href="#">首页</a></li>
+                <li><a href="#">国内</a></li>
+                <li><a href="#">国际</a></li>
+                <li><a href="#">科技</a></li>
+                <li><a href="#">娱乐</a></li>
+                <li><a href="#">互联网</a></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<button onclick="createdFn()">创建一个计算器</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="selectFn()">创建一个下拉框</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="tableFn()">创建一个table框</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="tableFnSty()">创建一个99乘法表</button>
+</body>
+
+</html>
+<script>
+
+    //找标签：
+    var ulId = document.querySelector('.nav>.container>ul');
+    var ulIdAll = document.querySelectorAll('.nav>.container>ul');
+    var ulIdGet = document.getElementsByTagName('ul');
+    console.log(' ', ulId);
+    console.log(' ', ulIdAll[0]);
+    console.log(' ', ulIdGet[0]);
+    
+    var liId = document.querySelectorAll('.nav-list>li');
+    var liIdFor = document.getElementsByTagName('li');
+    var liIdChild = document.querySelector('ul').children;
+    console.log(' ',Array.from(liId));
+    console.log(' ',Array.from(liIdFor));
+    console.log(' ',Array.from(liIdChild));
+
+    for(let i = 0;i<liId.length;i++){
+        if(liId[i].children[0].innerHTML == '国际'){
+            console.log('',liId[i]);
+        }
+    }
+    for(let i = 0;i<liId.length;i++){
+        if(liId[i].children[0].innerHTML == '首页'){
+            console.log('',liId[i].children[0]);
+        }
+    };
+    var aAll = document.querySelectorAll('a');
+    for(let  i = 0;i < aAll.length;i++){
+        if(aAll[i].innerText == '首页'){
+            console.log(' ',aAll[i]);
+        }
+    };
+    // console.log('',document.body);
+    // console.log('',document.links);//链接标签
+    // console.log('',document.forms[0]);
+    //textContent可直接修改子元素内容
+    // console.log('',document.querySelector('ul').children[0].textContent = 1234);
+
+    // 纯JS存款收益计算器，静态版：只有JS代码
+</script>
+<script src="./Dom练习.js"></script>

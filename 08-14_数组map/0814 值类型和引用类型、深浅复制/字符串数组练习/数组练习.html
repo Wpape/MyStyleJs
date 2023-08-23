@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			var arr = [1, 2, 6, 4, 5, 3, 7, 8, 9];
+			// i=0 不删，length=9，[1, 2, 6, 4, 5, 3, 7, 8, 9]
+			// i=1 删除2，length=8，[1, 6, 4, 5, 3, 7, 8, 9]
+			// i=2 删除4，length=7，[1, 6, 5, 3, 7, 8, 9]
+
+			// 优化
+			// i=0 不删，length=9，[1, 2, 6, 4, 5, 3, 7, 8, 9]
+			// i=1 删除2，length=8，[1, 6, 4, 5, 3, 7, 8, 9]，保持i=1
+			// i=1 删除6，length=7，[1, 4, 5, 3, 7, 8, 9]，保持i=1
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i] % 2 === 0) {
+					arr.splice(i, 1);
+					i--;
+				}
+			}
+			console.log('arr: ', arr);
+
+			// 使用数组随机获取四位数字不相同的密码。[0-9]
+			var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+			for (var i = 0; i < 4; i++) {
+				var index = Math.floor(Math.random() * arr.length);
+				var val = arr[index]; // 通过索引值取出数组的元素值之后，从数组中删除该元素
+				arr.splice(index, 1); // 每删除一个数组元素，数组的长度值减1，最大索引值也会减1
+				// console.log('index:', index,'val: ', val, arr);
+			}
+
+			var arr = [];
+			while (arr.length < 4) {
+				var index = Math.floor(Math.random() * 10);
+				if (!arr.includes(index)) {
+					arr.push(index);
+				}
+			}
+			console.log('arr: ', arr);
+		</script>
+	</body>
+</html>

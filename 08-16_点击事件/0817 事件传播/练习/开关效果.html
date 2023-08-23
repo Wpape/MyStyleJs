@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			.box {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			.blue {
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" id="box"></div>
+		<script>
+			var box = document.getElementById('box');
+
+			// 在JS中修改标签的样式：通过JS代码让标签的样式发生变化，可以通过：
+			// 1、直接使用style属性改变样式：适用于修改的样式比较少，方便修改
+			// 2、通过给标签添加或者移除类名改变样式：
+
+			// 布尔值
+			// var red = true; // red用来标记是不是红色
+			// console.log('red: ', red);
+			// box.onclick = function () {
+			// 	if (red) {
+			// 		// box.style.backgroundColor = 'blue';
+			//     box.classList.add('blue');
+			// 		// red = false;
+			// 	} else {
+			//     // box.style.backgroundColor = 'red';
+			//     box.classList.remove('blue');
+			// 		// red = true;
+			// 	}
+			// 	red = !red;
+			// 	console.log('red: ', red);
+			// };
+
+			// 对2求余法
+			var index = 0;
+			box.onclick = function () {
+				index++;
+				// 让index的值永远都保持为0或者1
+				// index值为1，计算结果是1
+				// index的值2，计算结果是0
+				index = index % 2;
+				if (index % 2 === 1) {
+					box.style.backgroundColor = 'blue';
+				} else {
+					box.style.backgroundColor = 'red';
+				}
+
+				console.log('index: ', index);
+			};
+
+			// index的值会自增++ 保持为0-9
+
+			// 判断背景颜色的值等
+			// 添加和移除类名
+			// box.onclick = function () {
+			// 	console.log('点击了div标签');
+			// 	box.classList.toggle('blue');
+			// };
+
+			var i = 0;
+			document.body.onclick = function () {
+				i++;
+				i = i % 10;
+				// if (i === 10) {
+				// 	i = 0;
+				// }
+				console.log('i: ', i);
+			};
+		</script>
+	</body>
+</html>

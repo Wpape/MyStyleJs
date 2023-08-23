@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			// 形参fn接收到传递的实参函数
+			function sort(fn) {
+				fn(100); // 回调实参函数，并传递一个数据100给实参函数
+				fn(200);
+				fn(300);
+				// for (var i = 0; i < 3; i++) {
+				// 	fn(i);
+				// }
+			}
+
+			// sort() 让sort函数执行，sort函数执行的之后传递了一个实参：实参是一个函数
+			sort(function (x) {
+				console.log('执行----');
+				if (x == 200) {
+					return;
+				}
+				console.log('函数执行', x);
+			});
+
+			// -----------------------------------
+
+			var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			function forEach(fn) {
+				for (var i = 0; i < nums.length; i++) {
+					fn(nums[i], i, nums); // fn调用了10次，forEach的回调函数也会执行10次
+				}
+			}
+
+			// 数组有多少个元素，forEach的回调函数就会执行多少次
+			// item 数组的元素值，按照数组元素的顺序输出
+			// index 数组的索引值
+			// array 数组本身
+			forEach(function (item, index, array) {
+				// index=0 回调函数执行第一次，index===6不成立，return不执行，log执行了：1 0
+				// index=1 回调函数执行第二次，index===6不成立，return不执行，log执行了：2 1
+				// index=2 回调函数执行第三次，index===6不成立，return不执行，log执行了：3 2
+				// index=3 回调函数执行第四次，index===6不成立，return不执行，log执行了：4 3
+				// index=4 回调函数执行第五次，index===6不成立，return不执行，log执行了：5 4
+				// index=5 回调函数执行第六次，index===6不成立，return不执行，log执行了：6 5
+				// index=6 回调函数执行第七次，index===6成立，return执行，log没有执行
+				// index=7 回调函数执行第八次，index===6不成立，return不执行，log执行了：8 7
+				// index=8 回调函数执行第九次，index===6不成立，return不执行，log执行了：9 8
+				// index=9 回调函数执行第十次，index===6不成立，return不执行，log执行了：10 9
+				if (index === 6) {
+					return;
+				}
+				console.log('item, index ', item, index);
+			});
+
+			// ----------------------------
+
+			console.log('-----------------------------------------');
+
+			// fn(100);
+			// fn(200);
+			// fn(300);
+			// function fn(x) {
+			// 	if (x == 200) {
+			// 		return;
+			// 	}
+			// 	console.log('x: ', x);
+			// }
+
+			// var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+			// for (var i = 0; i < nums.length; i++) {
+			// 	fn(nums[i], i, nums);
+			// }
+
+			// function fn(item, index, array) {
+			// 	console.log('item, index: ', item, index);
+			// }
+
+			// +====================================================
+			var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+			function some(fn) {
+				var result = false;
+				for (var i = 0; i < nums.length; i++) {
+					result = fn(nums[i], i, nums);
+					if (result) {
+						break;
+					}
+				}
+
+				return result;
+			}
+
+			var res = some(function (item, index, array) {
+				console.log('item, index: ', item, index);
+				return item - 6 > 0;
+			});
+			console.log('res: ', res);
+		</script>
+	</body>
+</html>

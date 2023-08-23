@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style>
+			.box {
+			}
+			.box > .inner {
+			}
+		</style>
+	</head>
+	<body>
+		<div class="inner">3</div>
+		<div class="box" id="box">
+			<div class="inner item">1</div>
+			<div class="inner">2</div>
+		</div>
+		<input type="radio" name="sex" /> 男 <input type="radio" name="sex" /> 女
+		<script>
+			// 在html中标签一般是叫做标签，在JS中一般称作元素 或者 元素对象
+
+			// 元素的查找
+			// 1、通过CSS选择器查找: querySelector和querySelectorAll 他们的参数都是CSS选择器，与CSS样式中选择器的写法一致
+
+			// querySelector 找到第一个符合条件的元素，如果没有返回null
+			var box = document.querySelector('.box');
+			console.dir(box);
+			var inner = document.querySelector('.box>.inner');
+			var inner = document.querySelector('.box .inner:first-child');
+			// var inner = document.querySelector('div#box .inner');
+			console.log('inner: ', inner);
+
+			// querySelectorAll 找到页面上所有符合条件的元素，返回值是一个类似数组的节点列表：有索引值，也有长度值。如果没有返回值是空的节点列表（节点列表的长度值为0）
+			var divs = document.querySelectorAll('.box .inner');
+			console.log('divs: ', divs);
+
+			// console.log(document.querySelector('#box'));
+			// console.log(document.querySelectorAll('#box'));
+
+			// 使用for语句遍历元素节点
+			var colors = ['red', 'green', 'yellow'];
+			for (var i = 0; i < divs.length; i++) {
+				var div = divs[i];
+				// console.log('div: ', div);
+				div.style.color = colors[i];
+			}
+
+			// 2、通过id名找元素，返回值是一个元素对象，找不到返回null
+			var box_id = document.getElementById('box');
+			console.log('box_id: ', box_id);
+
+			// 3、通过类名找标签，返回值是一个类数组结构的元素集合：有索引值，也有长度值。如果找不到返回长度为0的元素集合
+			var inners = document.getElementsByClassName('inner'); // 具有inner类名的标签
+			// var inners = document.getElementsByClassName('inner item'); // 同时具有inner和item类名的标签
+			console.log('inners: ', inners);
+
+			// 4、通过标签名找标签，返回值是一个类数组结构的元素集合：有索引值，也有长度值。如果找不到返回长度为0的元素集合
+			var inners = document.getElementsByTagName('div');
+			console.log('inners: ', inners);
+
+			// 5、通过name属性的值找标签，返回值是一个节点列表，通常用于表单元素
+			var inputs = document.getElementsByName('sex');
+			console.log('inputs: ', inputs);
+
+			// 获取所有的元素节点：
+			// console.log(document.querySelectorAll('*'));
+			// console.log(document.getElementsByTagName('*'));
+			// console.log(document.all);
+		</script>
+	</body>
+</html>

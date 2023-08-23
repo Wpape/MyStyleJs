@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta name="author" content="金西振" />
+		<title></title>
+		<style></style>
+	</head>
+	<body>
+		<script>
+			var a = 2;
+			// 判断数据类型
+			// 基本数据类型，可以使用typeof
+			a = 2;
+			console.log(typeof a); // number
+			a = '2';
+			console.log(typeof a); // string
+			a = true;
+			console.log(typeof a); // boolean
+      // 复杂数据类型不能使用typeof：array和object都是返回object
+			// a = [1, 2, 3];
+			// console.log(typeof a);// object
+			// a = { a: 1, b: 2 };
+			// console.log(typeof a);// object
+      // a = function(){}
+			// console.log(typeof a);// function
+
+      // isArray 判断一个变量的值是否是数组
+      a = [1, 2, 3];
+      console.log(Array.isArray(a));
+
+      // 实例：通过构造函数new的对象
+
+      // 判断a是否是构造函数Array的实例：
+      console.log(a instanceof Array);
+      
+      console.log(a instanceof Object);
+
+		</script>
+	</body>
+</html>
