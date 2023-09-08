@@ -1,169 +1,712 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="./唯品会.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./唯品会.css">
+    <link rel="stylesheet" href="./唯品会轮播图.css">
+    <link rel="stylesheet" href="./唯品会底部内容.css">
+    <link rel="stylesheet" href="./唯品会侧边栏.css">
+<script src="./唯品会商品分类json.js"></script>
+
 </head>
+
 <body>
-    <div class="top-nav">
-        <div class="nav-cont w">
-            <div class="nav-left">
-                <div class="present">
-                    <div class="city">郑州市</div>
-
-                </div>
-                <div class="jiantou"></div>
-            </div>
-            <div class="city-hidden">
-                <p>请选择您所在的城市</p>
-                <div class="area">
-                    <div class="area-header">
-                        <ul class="ads">
-                            <li class="ads-item ads-province ads-item-active">省份</li>
-                            <li class="ads-item ads-city">城市</li>
-                        </ul>
-                    </div>
-
-                    <div class="area-body">
-                        <ul class="area-box province-box">
-                            <li class="area-detail"><a href="#">北京市</a></li>
-                            <li class="area-detail"><a href="#">天津市</a></li>
-                            <li class="area-detail"><a href="#">河北省</a></li>
-                            <li class="area-detail"><a href="#">山西省</a></li>
-                            <li class="area-detail"><a href="#">内蒙古自治区</a></li>
-                            <li class="area-detail"><a href="#">辽宁省</a></li>
-                            <li class="area-detail"><a href="#">吉林省</a></li>
-                            <li class="area-detail"><a href="#">黑龙江省</a></li>
-                            <li class="area-detail"><a href="#">上海市</a></li>
-                            <li class="area-detail"><a href="#">江苏省</a></li>
-                            <li class="area-detail"><a href="#">浙江省</a></li>
-                            <li class="area-detail"><a href="#">安徽省</a></li>
-                            <li class="area-detail"><a href="#">福建省</a></li>
-                            <li class="area-detail"><a href="#">江西省</a></li>
-                            <li class="area-detail"><a href="#">山东省</a></li>
-                            <li class="area-detail"><a href="#">河南省</a></li>
-                            <li class="area-detail"><a href="#">湖北省</a></li>
-                            <li class="area-detail"><a href="#">湖南省</a></li>
-                            <li class="area-detail"><a href="#">广东省</a></li>
-                        </ul>
-
-                        <ul class="area-box city-box">
-                            <li class="area-detail"><a href="#">郑州市</a></li>
-                            <li class="area-detail"><a href="#">开封市</a></li>
-                            <li class="area-detail"><a href="#">洛阳市</a></li>
-                            <li class="area-detail"><a href="#">平顶山市</a></li>
-                            <li class="area-detail"><a href="#">鹤壁市</a></li>
-                            <li class="area-detail"><a href="#">新乡市</a></li>
-                            <li class="area-detail"><a href="#">焦作市</a></li>
-                            <li class="area-detail"><a href="#">濮阳市</a></li>
-                            <li class="area-detail"><a href="#">许昌市</a></li>
-                            <li class="area-detail"><a href="#">漯河市</a></li>
-                            <li class="area-detail"><a href="#">三门峡市</a></li>
-                            <li class="area-detail"><a href="#">南阳市</a></li>
-                            <li class="area-detail"><a href="#">商丘市</a></li>
-                            <li class="area-detail"><a href="#">信阳市</a></li>
-                            <li class="area-detail"><a href="#">周口市</a></li>
-                            <li class="area-detail"><a href="#">驻马店市</a></li>
-                            <li class="area-detail"><a href="#">济源市</a></li>
-                        </ul>
-
+    <header>
+        <div class="top-nav">
+            <div class="nav-cont w">
+                <div class="nav-left">
+                    <div class="present">
+                        <div class="city">郑州市</div>
 
                     </div>
+                    <div class="jiantou"></div>
                 </div>
-                <i class="close">&times;</i>
-            </div>
+                <div class="city-hidden">
+                    <p>请选择您所在的城市</p>
+                    <div class="area">
+                        <div class="area-header">
+                            <ul class="ads">
+                                <li class="ads-item ads-province ads-item-active">省份</li>
+                                <li class="ads-item ads-city">城市</li>
+                            </ul>
+                        </div>
 
-            <ul class="nav-right">
-                <li class="nav-title">请登录</li>
-                <div class="login-box hidden-box">
-                    <div class="login-tit clearfix">
-                        <span></span>
-                        <p>您好！ [请登录]</p>
+                        <div class="area-body">
+                            <ul class="area-box province-box">
+                                <li class="area-detail"><a href="#">北京市</a></li>
+                                <li class="area-detail"><a href="#">天津市</a></li>
+                                <li class="area-detail"><a href="#">河北省</a></li>
+                                <li class="area-detail"><a href="#">山西省</a></li>
+                                <li class="area-detail"><a href="#">内蒙古自治区</a></li>
+                                <li class="area-detail"><a href="#">辽宁省</a></li>
+                                <li class="area-detail"><a href="#">吉林省</a></li>
+                                <li class="area-detail"><a href="#">黑龙江省</a></li>
+                                <li class="area-detail"><a href="#">上海市</a></li>
+                                <li class="area-detail"><a href="#">江苏省</a></li>
+                                <li class="area-detail"><a href="#">浙江省</a></li>
+                                <li class="area-detail"><a href="#">安徽省</a></li>
+                                <li class="area-detail"><a href="#">福建省</a></li>
+                                <li class="area-detail"><a href="#">江西省</a></li>
+                                <li class="area-detail"><a href="#">山东省</a></li>
+                                <li class="area-detail"><a href="#">河南省</a></li>
+                                <li class="area-detail"><a href="#">湖北省</a></li>
+                                <li class="area-detail"><a href="#">湖南省</a></li>
+                                <li class="area-detail"><a href="#">广东省</a></li>
+                            </ul>
+
+                            <ul class="area-box city-box">
+                                <li class="area-detail"><a href="#">郑州市</a></li>
+                                <li class="area-detail"><a href="#">开封市</a></li>
+                                <li class="area-detail"><a href="#">洛阳市</a></li>
+                                <li class="area-detail"><a href="#">平顶山市</a></li>
+                                <li class="area-detail"><a href="#">鹤壁市</a></li>
+                                <li class="area-detail"><a href="#">新乡市</a></li>
+                                <li class="area-detail"><a href="#">焦作市</a></li>
+                                <li class="area-detail"><a href="#">濮阳市</a></li>
+                                <li class="area-detail"><a href="#">许昌市</a></li>
+                                <li class="area-detail"><a href="#">漯河市</a></li>
+                                <li class="area-detail"><a href="#">三门峡市</a></li>
+                                <li class="area-detail"><a href="#">南阳市</a></li>
+                                <li class="area-detail"><a href="#">商丘市</a></li>
+                                <li class="area-detail"><a href="#">信阳市</a></li>
+                                <li class="area-detail"><a href="#">周口市</a></li>
+                                <li class="area-detail"><a href="#">驻马店市</a></li>
+                                <li class="area-detail"><a href="#">济源市</a></li>
+                            </ul>
+
+
+                        </div>
                     </div>
-                    <ul class="login-classify clearfix">
-                        <li>我的收藏</li>
-                        <li>我的订单</li>
-                        <li>零钱</li>
-                        <li>我的优惠券</li>
-                        <li>我的唯品币</li>
-                        <li>唯品金融</li>
-                    </ul>
+                    <i class="close">&times;</i>
                 </div>
-                <li>注册</li>
-                <li class="nav-title">
-                    <i class="gift-gif"></i>
-                    签到有礼
-                    <div class="hidden-box gift-box">
-                        <div class="gift-container">
-                            <h2>
-                                请前往
-                                <span class="highlight">唯品会APP首页</span>
-                                签到哦
-                            </h2>
-                            <div class="gift-msg">
-                                即日起，签到网页端入口将下线，请前往“唯品会APP首页-签到领券”继续参与签到活动。
+
+                <ul class="nav-right">
+                    <li class="nav-title">请登录</li>
+                    <div class="login-box hidden-box">
+                        <div class="login-tit clearfix">
+                            <span></span>
+                            <p>您好！ [请登录]</p>
+                        </div>
+                        <ul class="login-classify clearfix">
+                            <li>我的收藏</li>
+                            <li>我的订单</li>
+                            <li>零钱</li>
+                            <li>我的优惠券</li>
+                            <li>我的唯品币</li>
+                            <li>唯品金融</li>
+                        </ul>
+                    </div>
+                    <li>注册</li>
+                    <li class="nav-title">
+                        <i class="gift-gif"></i>
+                        签到有礼
+                        <div class="hidden-box gift-box">
+                            <div class="gift-container">
+                                <h2>
+                                    请前往
+                                    <span class="highlight">唯品会APP首页</span>
+                                    签到哦
+                                </h2>
+                                <div class="gift-msg">
+                                    即日起，签到网页端入口将下线，请前往“唯品会APP首页-签到领券”继续参与签到活动。
+                                </div>
+                                <img src="https://shop.vipstatic.com/img/common/header_signin_v2-hash-d1c1f86e.png"
+                                    alt="">
+                                <div class="gift-bottom clearfix">
+                                    <img src="https://b.appsimg.com/upload/momin/2020/08/26/78/1598435695911.png"
+                                        alt="">
+                                    <span class="gift-bottom-msg">
+                                        也可以使用
+                                        <strong>微信</strong>
+                                        扫码签到哦
+                                    </span>
+                                </div>
                             </div>
-                            <img src="https://shop.vipstatic.com/img/common/header_signin_v2-hash-d1c1f86e.png" alt="">
-                            <div class="gift-bottom clearfix">
-                                <img src="https://b.appsimg.com/upload/momin/2020/08/26/78/1598435695911.png" alt="">
-                                <span class="gift-bottom-msg">
-                                    也可以使用
-                                    <strong>微信</strong>
-                                    扫码签到哦
-                                </span>
+                        </div>
+                    </li>
+                    <li>我的订单</li>
+                    <li class="nav-title">
+                        我的特卖
+                        <i class="ico-dis"></i>
+                    </li>
+                    <ul class="hidden-box sold-container">
+                        <li>商品列表</li>
+                        <li>品牌收藏</li>
+                        <li>我的足迹</li>
+                    </ul>
+                    <li class="nav-title">
+                        会员俱乐部
+                        <i class="ico-dis"></i>
+                        <ul class="none-list hidden-box">
+                            <li>俱乐部首页</li>
+                        </ul>
+                    </li>
+                    <li class="nav-title">
+                        客户服务
+                        <i class="ico-dis"></i>
+                        <ul class="none-list hidden-box">
+                            <li>联系客服</li>
+                            <li>帮助中心</li>
+                            <li>服务中心</li>
+                            <li>知识产权投诉</li>
+                        </ul>
+                    </li>
+                    <div class="hidden-box"></div>
+                    <li class="nav-title">
+                        <i class="ico-mob"></i>
+                        手机版
+                    </li>
+                    <div class="hidden-box"></div>
+                    <li class="nav-title">
+                        更多
+                        <i class="ico-dis"></i>
+                    </li>
+                    <div class="hidden-box"></div>
+                </ul>
+            </div>
+        </div>
+        <div class="alert">
+            <div class="alert-cont">
+                <span></span>
+                <span>已成功切换至<i class="to-city"></i></span>
+            </div>
+        </div>
+        <div class="head-logo">
+            <div class="head-inner clearfix">
+                <div class="c-logo">
+                    <div class="header-logo-dop">
+                        <a href="#">
+                            <img src="https://b.appsimg.com/upload/momin/2020/06/16/82/1592278113502.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="c-service  header-vip   is-service-on-left has-service-operation">
+                    <a class="c-service-link"
+                        href="https://h5rsc.vip.com/h5rscSupportInsuranc/h5rscSupportInsuranc/index.html"
+                        mars_sead="home_header_vip1" target="_blank"></a><!--
+ --><a class="c-service-link" href="https://www.vip.com/" mars_sead="home_header_vip2" target="_blank"></a><!--
+ --><a class="c-service-link" href="https://help.vip.com/commitment.php" mars_sead="home_header_vip3"
+                        target="_blank"></a>
+                    <img class="c-service-img" src="//b.appsimg.com/upload/momin/2020/04/16/150/1587017895494.jpg"
+                        width="304" height="100">
+                </div>
+
+                <div class="head-cart" data-hover="head-cart-hover">
+                    <div class="tool">
+                        <a href="//cart.vip.com/te2/?cart_ver=4" mars_sead="home_top_bag_button" target="_blank"
+                            rel="nofollow">
+                            <span class="ico-bag"></span>
+                            <span class="mycarttext-default">购物袋</span>
+                            <span class="mycarttext-countdown"></span>
+                            <span class="counti-cons-bg">
+                                <span>0</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="tool-cn">
+                        <div class="tool-cn-inner">
+                            <div class="tool-cn-in">
+                                <p>你的购物袋还没有商品，再去逛逛吧~</p>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="c-search  c-category-search">
+                    <div class="c-search-form">
+                        <input class="c-search-input" type="text" mars_sead="search_entrance_click" placeholder="羽绒服女"
+                            autocomplete="off" max-length="100">
+                        <a class="c-search-button" href="###" mars_sead="search_button">
+                            <span class="c-search-icon"></span>
+                        </a>
+                    </div>
+                    <div>
+                        <ul class="c-search-hotwords-list">
+                            <li>
+                                <!-- <span class=" hidden ">|</span> -->
+                                <a href="//category.vip.com/suggest.php?keyword=%E5%87%89%E9%9E%8B%E5%A5%B32023%E6%96%B0%E6%AC%BE"
+                                    class=" " data-word="凉鞋女2023新款">凉鞋女2023新款</a>
+                            </li>
+                            <li>
+                                <span class="">|</span>
+                                <a href="//category.vip.com/suggest.php?keyword=%E5%90%8A%E5%B8%A6%E8%BF%9E%E8%A1%A3%E8%A3%99"
+                                    class=" " data-word="吊带连衣裙">吊带连衣裙</a>
+                            </li>
+                            <li>
+                                <span class="">|</span>
+                                <a href="//category.vip.com/suggest.php?keyword=%E6%96%90%E4%B9%90" class=" "
+                                    data-word="斐乐">斐乐</a>
+                            </li>
+                            <li>
+                                <span class="">|</span>
+                                <a href="//category.vip.com/suggest.php?keyword=%E7%94%B7%E9%9E%8B" class=" "
+                                    data-word="男鞋">男鞋</a>
+                            </li>
+                            <li>
+                                <span class="">|</span>
+                                <a href="//category.vip.com/suggest.php?keyword=%E6%8B%96%E9%9E%8B%E5%A5%B3%E5%A4%8F%E5%A4%96%E7%A9%BF"
+                                    class=" " data-word="拖鞋女夏外穿">拖鞋女夏外穿</a>
+                            </li>
+                            <li>
+                                <span class="">|</span>
+                                <a href="//category.vip.com/suggest.php?keyword=%E9%98%BF%E8%BF%AA%E8%BE%BE%E6%96%AF"
+                                    class=" " data-word="阿迪达斯">阿迪达斯</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="c-search-helper"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 商品分类 -->
+        <div class="head-inner">
+            <ul class="main-nav-link clearfix" >
+
+                <li class="nav-category"><a href="#" class="main-nav-atag">商品分类</a></li>
+                <li id="0"><a href="//www.vip.com/" target="_blank"
+                        class="main-nav-atag  nav_current">推荐</a></li>
+                <li><a href="https://mst.vip.com/hVPsAcT1SlffeUgyfERpvw.php?wapid=mst_100041835&amp;_src=mst&amp;extra_banner=115041835&amp;nova=1&amp;nova_platform=2&amp;mst_page_type=guide&amp;extra_from_tab=1"
+                        target="_blank" class="main-nav-atag ">3折疯抢</a></li>
+                <li><a href="https://mst.vip.com/bwU4kPA93bm2EBnkuKtL6g.php?wapid=mst_100014286&amp;_src=mst&amp;extra_banner=115014286&amp;nova=1&amp;nova_platform=2&amp;mst_page_type=guide&amp;extra_from_tab=1"
+                        target="_blank" class="main-nav-atag ">唯品快抢</a></li>
+                <li><a
+                        href="https://mst.vip.com/YQEP6FoeTmbMvjPzgw7qGg.php?wapid=mst_100071598&amp;_src=mst&amp;extra_banner=0&amp;nova=1&amp;nova_platform=2&amp;mst_page_type=guide"
+                        target="_blank" class="main-nav-atag ">奢品</a></li>
+                <li><a href="//www.vip.com/nav/53174451.html" target="_blank"
+                        class="main-nav-atag ">美妆</a></li>
+                <li><a href="//www.vip.com/nav/53174452.html" target="_blank"
+                        class="main-nav-atag ">运动</a></li>
+
+                <li><a href="//www.vip.com/nav/53174447.html" target="_blank"
+                        class="main-nav-atag ">女装</a></li>
+                <li><a href="//www.vip.com/nav/53174446.html" target="_blank"
+                        class="main-nav-atag ">电器</a></li>
+                <li><a href="//www.vip.com/nav/53174456.html" target="_blank"
+                        class="main-nav-atag ">母婴</a></li>
+                <li><a href="//www.vip.com/nav/53174445.html" target="_blank"
+                        class="main-nav-atag ">鞋包</a></li>
+                <li><a href="//www.vip.com/nav/53174453.html" target="_blank"
+                        class="main-nav-atag ">百货</a></li>
+                <li><a href="//www.vip.com/nav/53174458.html" target="_blank"
+                        class="main-nav-atag ">首饰</a></li>
+                <li><a href="//www.vip.com/nav/53174449.html" target="_blank"
+                        class="main-nav-atag ">内衣</a></li>
+
+                <li class="more-wrap" data-hover="more-wrap-hover">
+                    <a class="main-nav-atag ">更多<i class="ico-dis"
+                            style="transform: rotate(360deg); top: 20px; border-color: rgb(153, 153, 153) transparent transparent;"></i>
+                    </a>
+                    <div class="channel-item-group" id="J-channel-item-group">
+                        <div class="channel-item"><a target="_blank" href="//www.vip.com/nav/53174448.html"
+                                class="channel-more-itemlink">
+                                男装
+                            </a>
+                        </div>
+                        <div class="channel-item">
+                            <a target="_blank" href="//www.vip.com/nav/53174457.html" class="channel-more-itemlink">
+                                食品
+                            </a>
+                        </div>
+                        <div class="channel-item">
+                            <a target="_blank" href="//www.vip.com/nav/53174454.html" class="channel-more-itemlink">
+                                家纺
+                            </a>
+                        </div>
+                    </div>
                 </li>
-                <li>我的订单</li>
-                <li class="nav-title">
-                    我的特卖
-                    <i class="ico-dis"></i>
-                </li>
-                <ul class="hidden-box sold-container">
-                    <li>商品列表</li>
-                    <li>品牌收藏</li>
-                    <li>我的足迹</li>
-                </ul>
-                <li class="nav-title">
-                    会员俱乐部
-                    <i class="ico-dis"></i>
-					<ul class="none-list hidden-box">
-						<li >俱乐部首页</li>
-					</ul>
-                </li>
-                <li class="nav-title">
-                    客户服务
-                    <i class="ico-dis"></i>
-					<ul class="none-list hidden-box">
-						<li>联系客服</li>
-						<li>帮助中心</li>
-						<li>服务中心</li>
-						<li>知识产权投诉</li>
-					</ul>
-                </li>
-                <div class="hidden-box"></div>
-                <li class="nav-title">
-                    <i class="ico-mob"></i>
-                    手机版
-                </li>
-                <div class="hidden-box"></div>
-                <li class="nav-title">
-                    更多
-                    <i class="ico-dis"></i>
-                </li>
-                <div class="hidden-box"></div>
             </ul>
+            <!-- 底部下拉框 -->
+            <div class="nav-category-data">
+                <ul class="cate-menu"></ul>
+                <div class="cate-pop">
+                    <div class="cate-part" >
+                    <!-- 左侧 -->
+
+                    <div class="cate-part-col1" style="overflow: hidden; position: relative;">
+                        <div class="cate-detail"></div>
+                    </div>
+                    
+                    <!-- 右侧 -->
+                    <div class="cate-part-col2">
+                        <div class="brand-title">
+                            品牌推荐
+                        </div>
+                        
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="s_bg_top">
+        <div class="swipperA ">
+            <div class="swipper-box">
+                <img id="weipper-img" src="//b.appsimg.com/upload/momin/2023/08/23/124/1692760185593.jpg" alt="">
+                <img id="weipper-img" src="https://img1.baidu.com/it/u=1890390320,3399874998&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800" alt="">
+                <img id="weipper-img" src="https://img1.baidu.com/it/u=1890390320,3399874998&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800" alt="">
+                <div class="btn btn-l"></div>
+                <div class="btn btn-r"></div>
+                <ul class="swipper"></ul>
+            </div>
+           </div>
+    </div>
+<div class="wrap-operate">
+<div class="ltart-clkable">
+    <img class="img1" src="https://h2.appsimg.com/b.appsimg.com/upload/momin/2023/08/23/156/1692760944875_2340x240_90.jpg" alt="">
+    <div class="boximg">
+        <img class="img2" src="https://h2.appsimg.com/b.appsimg.com/upload/momin/2023/08/23/91/1692760960080_756x500_90.jpg" alt="">
+        <img class="img2" src="https://h2.appsimg.com/b.appsimg.com/upload/momin/2023/08/23/74/1692760969608_756x500_90.jpg" alt="">
+        <img class="img2" src="	https://h2.appsimg.com/b.appsimg.com/upload/momin/2023/08/23/77/1692760980115_756x500_90.jpg" alt="">
+    </div>
+</div>
+<div class="hot-sale-operation">
+    <div class="hot-sale-title">
+        <img src="https://a.vpimg2.com/upload/flow/2018/08/17/154/15344789862278.jpg" alt="">
+    </div>
+    <div class="ltart-flexbox">
+        <div class="flexbox-spil">
+            <div class="spilimglist">
+               <div class="hotimg"> <img class="hotimg-1" src="//h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/2022/07/26/11/7ba88e14-d53a-4d8e-bb04-0c5f999e1884_292x292_90.jpg" alt="">
+            <div class="hot-span">
+                <img src="https://h2.appsimg.com/a.appsimg.com/upload/brandcool/0/9441b902695e4dacbfcbe28978270575/10000365/primary_136x68_90.png" alt="">
+                <p>帝客</p>
+                <span class="money-two">
+                    <span>拍卖价</span>
+                    <span>￥99</span>
+                </span>
+            </div>
+            </div>
+               <div class="hotimg"> <img  class="hotimg-1" src="https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/112098/2021/1228/62/fd18b93a-6096-4b9e-9567-9875f1dcf9bc_292x292_90.jpg" alt="">
+                <span class="hot-span">
+                    <img src="https://h2.appsimg.com/a.appsimg.com/upload/brandcool/0/LOGO/168491643564907419/primary_136x68_90.png" alt="">
+                    <p>戴维贝拉</p>
+                    <span class="money-two">
+                        <span>拍卖价</span>
+                        <span>￥189</span>
+                    </span>
+                </span>
+            </div>
+               <div class="hotimg"> <img  class="hotimg-1" src="https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/2022/09/20/43/b8a9360a-e4a8-4c11-a965-10784d16407a_292x292_90.jpg" alt="">
+                <span class="hot-span">
+                    <img src="https://h2.appsimg.com/a.appsimg.com/upload/brandcool/0/fd90e924f7804888bf6f46a46ace159a/10000452/primary_136x68_90.png" alt="">
+                    <p>江博士</p>
+                    <span class="money-two">
+                        <span>拍卖价</span>
+                        <span>￥103</span>
+                    </span>
+                </span>
+                
+            </div>
+            </div>
+        </div>
+        <div class="flexbox-spil" style="background-image: url(https://h2.appsimg.com/b.appsimg.com/upload/momin/2021/09/28/12/1632830863195_1140x664_90.jpg);">
+            <div class="spilimglist">
+               <div class="hotimg"> <img class="hotimg-1" src="https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/2023/08/22/35/813919bc-e23d-498a-bd17-ea92b74c7b54_290x290_90.jpg" alt="">
+            <div class="hot-span" style="bottom: -34px;">
+                <img src="https://h2.appsimg.com/a.appsimg.com/upload/brandcool/0/LOGO/10001050/31ab72278e0145d194e1d9095e48a5e1/primary_136x68_90.png" alt="">
+                <p class="pheight">&emsp;</p>
+                <span class="money-two">
+                    <span>拍卖价</span>
+                    <span>￥99</span>
+                </span>
+            </div>
+            </div>
+               <div class="hotimg"> <img  class="hotimg-1" src="https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcvis/603176/2023/0815/6/9f06972e-65a1-4dd9-b14e-ff449c03b104_290x290_90.jpg" alt="">
+                <span class="hot-span" style="bottom: -34px;">
+                    <img src="https://h2.appsimg.com/a.appsimg.com/upload/brandcool/0/LOGO/10029412/e37a4ae9048142ae999e9a1290869feb/primary_136x68_90.png" alt="">
+                    <p class="pheight">&nbsp;</p>
+                    <span class="money-two">
+                        <span>拍卖价</span>
+                        <span>￥189</span>
+                    </span>
+                </span>
+            </div>
+               <div class="hotimg"> <img  class="hotimg-1" src="https://h2.appsimg.com/a.appsimg.com/upload/merchandise/pdcpos/1100001848/2023/0824/30/a2719211-b36a-47ea-a6b4-7491d1d415a2_290x290_90.jpg" alt="">
+                <span class="hot-span" style="bottom: -34px;">
+                    <img src="https://h2.appsimg.com/a.appsimg.com/upload/brandcool/0/LOGO/10022778/06f9f173f13e4ceda41b76b41f68657f/primary_136x68_90.png" alt="">
+                    <p class="pheight">&nbsp;</p>
+                    <span class="money-two">
+                        <span>拍卖价</span>
+                        <span>￥103</span>
+                    </span>
+                </span>
+                
+            </div>
+            </div>
         </div>
     </div>
-    <div class="alert">
-        <div class="alert-cont">
-            <span></span>
-            <span>已成功切换至<i class="to-city"></i></span>
+</div>
+</div>
+<div class="brand-item-page clearfix">
+<!-- <div class="brand-channelb-item">
+    <a href="#">
+        <img src="https://h2.appsimg.com/a.appsimg.com/upload/brand/upcb/2021/12/31/41/ias_2e93bf4b35d8a6a2c5b36f4d996e638d_1135x545_85.jpg" alt="">
+        <div class="brand-name">
+            <span>2.3</span><span>折起</span>
+            <span>匡威converse运动户外专场</span>
+        </div>
+    </a>
+</div> -->
+</div>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <ul class="footer-vip"></ul>
+        <div class="footer-list">
+            <dl class="link-anim">
+                <dt>服务保障</dt>
+                <dd>
+                    <a href="//h5rsc.vip.com/h5rscSupportInsuranc/h5rscSupportInsuranc/index.html" target="_blank" rel="nofollow">正品保证</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/commitment.php" target="_blank" rel="nofollow">7天无理由放心退</a>
+                </dd>
+                <dd>
+                    <a href="//acs.vip.com/" target="_blank" rel="nofollow">7x24小时客户服务</a>
+                </dd>
+                <dd>
+                    <a href="//h5rsc.vip.com/h5rscChangeProduct/h5rscChangeProduct/index.html" target="_blank" rel="nofollow">7天无理由随心换</a>
+                </dd>
+            </dl>
+            <dl class="link-anim">
+                <dt>购物指南</dt>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=308" target="_blank" rel="nofollow">导购演示</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=330" target="_blank" rel="nofollow">订单操作</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=206" target="_blank" rel="nofollow">会员注册</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=329" target="_blank" rel="nofollow">账户管理</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=104" target="_blank" rel="nofollow">收货样品</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?cid=69" target="_blank" rel="nofollow">会员等级</a>
+                </dd>
+            </dl>
+            <dl class="link-anim">
+                <dt>支付方式</dt>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=336" target="_blank" rel="nofollow">23家主流网银支付</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=336" target="_blank" rel="nofollow">支付宝、银联等支付</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=336" target="_blank" rel="nofollow">信用卡支付</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=335" target="_blank" rel="nofollow">零钱支付</a>
+                </dd>
+            </dl>
+            <dl class="link-anim">
+                <dt>配送方式</dt>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=345" target="_blank" rel="nofollow">配送范围及运费</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=63" target="_blank" rel="nofollow">验货与签收</a>
+                </dd>
+            </dl>
+            <dl class="link-anim">
+                <dt>售后服务</dt>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?cid=74" target="_blank" rel="nofollow">退货政策</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=236" target="_blank" rel="nofollow">退货流程</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?type=detail&amp;id=317" target="_blank" rel="nofollow">退款方式和时效</a>
+                </dd>
+                <dd>
+                    <a href="//help.vip.com/themelist.php?cid=146" target="_blank" rel="nofollow">换货服务</a>
+                </dd>
+            </dl>
+            <dl class="tc last">
+                <dt>唯品会APP二维码</dt>
+                <dd>
+                    <img class="lazy" src="//b.appsimg.com/2016/06/17/863/1466134037230.jpg" width="100" height="100" alt="唯品会APP二维码">
+                </dd>
+                <dd>下载唯品会移动APP</dd>
+            </dl>
+        </div>
+        <div class="footer-infor">
+            <p class="footer-infor-link">
+                <a target="_blank" rel="nofollow" href="//www.vip.com/about-us" title="关于我们">关于我们</a>|
+                <a target="_blank" rel="nofollow" href="//www.vip.com/en/about-us" title="About us">About us</a>|
+                <a target="_blank" rel="nofollow" href="http://ir.vip.com/" title="Investor Relations">Investor Relations</a>|
+                <a target="_blank" rel="nofollow" href="https://h5rsc.vip.com/esg/esg/index.html" title="ESG">ESG</a>|
+                <a target="_blank" rel="nofollow" href="https://h5rsc.vip.com/h5rscSupportInvestme/h5rscSupportInvestme/index.html" title="品牌招商">品牌招商</a>|
+                <a target="_blank" rel="nofollow" href="https://rule.vip.com/" title="平台规则">平台规则</a>|
+                <a target="_blank" rel="nofollow" href="//www.vip.com/privacy" title="隐私条款">隐私条款</a>|
+                <a target="_blank" rel="nofollow" href="https://h5rsc.vip.com/h5rscSupportClause/h5rscSupportClause/index.html" title="服务条款">服务条款</a>|
+                <a target="_blank" rel="nofollow" href="https://job.vip.com" title="唯品诚聘">唯品诚聘</a>|
+                <a target="_blank" rel="nofollow" href="//detail.vip.com/vipcard.html" title="唯品卡">唯品卡</a>|
+                <a target="_blank" href="//www.vip.com/contact-us" title="联系我们">联系我们</a>|
+                <a target="_blank" href="https://lapp.corp.vipshop.com:8013/Integrity-Report/?qd=GW" title="廉正举报">廉正举报</a>
+            </p>
+            <p class="footer-infor-txt">
+                Copyright © 2008-2023 vip.com，All Rights Reserved&nbsp;&nbsp;使用本网站即表示接受
+                <a rel="nofollow" target="_blank" href="//h5rsc.vip.com/h5rscSupportClause/h5rscSupportClause/index.html">唯品会用户协议</a>。版权所有
+                <a rel="nofollow" target="_blank" href="//www.vip.com/">广州唯品会电子商务有限公司</a>
+                <br>
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010302111111">
+                    <img src="//a.vpimg4.com/upload/actpics/act/sp/police_icon.png" width="14" height="14" style="margin:2px 3px 0 0;">粤公网安备 44010302111111号
+                </a>&nbsp;&nbsp;
+                <a rel="nofollow" target="_blank" href="https://beian.miit.gov.cn/">粤ICP备08114786号</a>
+                <a rel="nofollow" target="_blank" href="//h5rsc.vip.com/h5rscActValueAddedSe/h5rscActValueAddedSe/index.html">增值业务经营许可证：粤B2-20170777 </a>
+                <a rel="nofollow" target="_blank" href="https://a.vpimg2.com/upload/merchandise/pdcvis/2021/09/26/21/202109261150384052189.jpg">网络文化经营许可证：粤网文〔2021〕2056-282号</a>
+                <br>
+                <a rel="nofollow" target="_blank" href="//h5rsc.vip.com/h5rscActBusinessLice/h5rscActBusinessLice/index.html">经营主体证照</a>&nbsp;&nbsp;
+                <a target="_blank" href="//help.vip.com/themelist.php?type=detail&amp;id=475" rel="nofollow">风险监测信息</a>&nbsp;&nbsp;
+                <a rel="nofollow" target="_blank" href="//h5rsc.vip.com/h5rscActDrugInfoLice/h5rscActDrugInfoLice/index.html">互联网药品信息服务资格证书：（粤）-经营性-2018-0271</a>
+                <a rel="nofollow" target="_blank" href="//h5rsc.vip.com/h5rscActFoodTradeLic/h5rscActFoodTradeLic/index.html"> 网络食品交易第三方平台备案凭证：粤B2-20170777 </a>
+                <a rel="nofollow" target="_blank" href="//h5rsc.vip.com/h5rscActInstrumentTr/h5rscActInstrumentTr/index.html">医疗器械网络交易服务第三方平台备案凭证：（粤）网械平台备字[2019]第00001号</a>
+                <span style="color:#808080">出版物网络交易平台服务经营备案证：粤新出网备（2021）1号</span>
+<span>&nbsp;<a target="_blank" href="http://www.gdjubao.cn/jb/?harm_type=18">未成年人关怀专区</a></span><br>
+ <a rel="nofollow" target="_blank" href="//h5rsc.vip.com/h5rscActDrugTrans/h5rscActDrugTrans/index.html">药品网络交易服务第三方平台备案凭证：（粤）网药平台备字[2023] 002号</a>
+          
+                <span style="color:#808080">违法和不良信息举报电话：4006789888&nbsp;算法推荐违规举报电话：4006789888</span><span>&nbsp;<a target="_blank" href="https://a.vpimg2.com/upload/merchandise/pdcvis/2022/09/30/109/202209301420030668062.jpg">广东省放心消费承诺单位</a></span>
+            </p>
         </div>
     </div>
+    <div class="footer-ft">
+        <p class="footer-pic">            
+            <a rel="nofollow" target="_blank" href="//weiquan.vip.com">
+                <i class="footer-pic-ico04" title="消费维权服务站"></i>
+            </a>
+            <a rel="nofollow" target="_blank" href="https://www.12377.cn/">
+                <i class="footer-pic-ico11" title="不良信息举报中心"></i>
+            </a> 
+            <a rel="nofollow" target="_blank" href="https://xyt.xinchacha.com/pcinfo?sn=1438061342068367360&amp;certType=4" >
+                <img src="//a.vpimg2.com/upload/merchandise/pdcvis/2022/10/21/177/202210211645205194200.png" style="width:75px;height: 32px;margin-right: 9px;">
+            </a>
+            <a rel="nofollow" target="_blank" href="https://ss.knet.cn/verifyseal.dll?sn=2011022400100006603&amp;ct=df&amp;a=1&amp;pa=0.5265976136604793">
+                <i class="footer-pic-ico10" title="可信网站"></i>
+            </a>        
+        </p>
+    </div>
+</footer>
+
+  <!-- 侧边-唯品会 -->
+  <div class="sidebar">
+    <div class="sideber-top">
+        <div class="sn-sidebar-tabs">
+
+            <div class="content-text">
+                <span class="content-text-span1"></span>
+            </div>
+
+            <div class="content-text">
+                <span class="content-text-span2"></span>
+                <p>购物车</p>
+                <span class="red">0</span>
+            </div>
+
+            <div class="content-text">
+                <span class="content-text-span3"
+                    style="background: url('./img/sidebaricon.png')no-repeat -10px -31px;"></span>
+                <span class="span3-none">
+                    消息
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="sn-sidebar-tabs-top">
+
+            <div class="content-text">
+                <span class="content-text-span3"
+                    style="background: url('./img/sidebaricon.png')no-repeat -12px -55px;width: 13px;height: 15px;"></span>
+                <span class="span3-none">
+                    理财
+                </span>
+            </div>
+
+            <div class="content-text">
+                <span class="content-text-span3"
+                    style="background: url('./img/sidebaricon.png')no-repeat -10px -77px;"></span>
+                <span class="span3-none">
+                    足迹
+                </span>
+            </div>
+
+            <div class="content-text">
+                <span class="content-text-span3"
+                    style="background: url('./img/sidebaricon.png')no-repeat -10px -101px;"></span>
+                <span class="span3-none">
+                    签到
+                </span>
+            </div>
+
+            <div class="content-text">
+                <span class="content-text-span3"
+                    style="background: url('./img/sidebaricon.png')no-repeat -10px -295px;"></span>
+                <div class="div3-none">
+                    <img style="width: 100%;height: 100%;"
+                        src="https://image.suning.cn/uimg/cms/img/163549769972698545.png" alt="">
+                </div>
+                <span class="jio"></span>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="sn-sidebar-tabs-top float-bottom">
+
+        <div class="content-text">
+            <span class="content-text-span3"
+                style="background: url('./img/sidebaricon.png')no-repeat -11px -126px;"></span>
+            <span class="span3-none">
+                在线咨询
+            </span>
+        </div>
+
+        <div class="content-text">
+            <span class="content-text-span3"
+                style="background: url('./img/sidebaricon.png')no-repeat -11px -147px;"></span>
+            <span class="span3-none">
+                意见反馈
+            </span>
+        </div>
+
+        <div class="content-text">
+            <span class="content-text-span3"
+                style="background: url('./img/sidebaricon.png')no-repeat -10px -295px;"></span>
+            <div class="div3-none">
+                <img style="width: 100%;height: 100%;"
+                    src="https://image.suning.cn/uimg/cms/img/163549769972698545.png" alt="">
+            </div>
+            <span class="jio"></span>
+        </div>
+        <div class="content-text">
+            <span class="content-text-span3" style="background: url('./img/sidebaricon.png')no-repeat -11px -264px;width: 14px;
+                height: 22px;"></span>
+            <span class="span3-none">
+                返回顶部
+            </span>
+        </div>
+    </div>
+</div>
 </body>
+
 </html>
+
 <script src="./唯品会.js"></script>
+<script src="./唯品会轮播图.js"></script>
+<script src="./唯品会底部.js"></script>

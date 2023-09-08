@@ -1,0 +1,162 @@
+/* 字体图标 */
+
+@font-face {
+    font-family: "iconfont"; /* Project id 4178416 */
+    src: url('//at.alicdn.com/t/c/font_4178416_qivt8cvbve.woff2?t=1689946657387') format('woff2'),
+         url('//at.alicdn.com/t/c/font_4178416_qivt8cvbve.woff?t=1689946657387') format('woff'),
+         url('//at.alicdn.com/t/c/font_4178416_qivt8cvbve.ttf?t=1689946657387') format('truetype');
+  }
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-erweima:before {
+    content: "\eaf1";
+  }
+  
+  /* 侧边导航 */
+
+.sidebar{
+    width: 35px;
+    height:100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    /* justify-content: space-between; */
+    /* border: 1px solid black; */
+    background-color: #383838;
+    z-index: 2;
+    }
+    .sideber-top{
+        height: 357px;
+        width: 100%;
+        /* background-color: #1971EF; */
+        /* position: absolute; */
+        top: 0;
+        left: 0;
+        margin-top: 170px;
+    }
+    
+    .sn-sidebar-tabs{
+    background-color: #383838;
+    }
+    .content-text{
+       text-align: center;
+       margin: 4px 0;
+    }
+    .content-text:hover{
+       background-color: #FFAA01;
+    }
+    .content-text p{
+        writing-mode: vertical-rl;
+        line-height: 35px;
+        letter-spacing: 5px;
+    }
+    .sn-sidebar-tabs .content-text:nth-of-type(2){
+        border-top: 1px solid #4d4d4d;border-bottom: 1px solid #4d4d4d;
+        font-size: 12px;color: white;
+        padding: 13px 0;box-sizing: border-box;
+    }
+    
+    .content-text-span1{
+        display: inline-block;
+        background: url('./images/sidebaricon.png') no-repeat -10px -7px;
+        width: 16px;
+        height: 16px;
+        margin: 8px 0;
+    }
+    .content-text-span2{
+        display: inline-block;
+        background: url('./images/sidebaricon.png') no-repeat -7px -217px;
+        width: 16px;
+        height: 16px;
+        margin: 6px 0;
+    }
+    .content-text-span3{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: 7px 0;
+        /* background: url('./img/sidebaricon.png') no-repeat -10px -31px; */
+    }
+    .span3-none{
+        display: inline-block;
+        width: 35px;
+        height: 34px;
+        background-color: #FFAA01;
+        font-size: 12px;
+        color: black;
+        position: absolute;
+        line-height: 34px;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .5s;
+        overflow: hidden;
+    }
+    .div3-none{
+        width: 0px;height: 249px;position: absolute;top: -210px;
+        right: 35px;z-index: -2;
+        transition: all .1s;
+    }
+    .red{
+        width: 16px;
+        height: 16px;
+        background-color: red;
+        padding: 0 8px;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    .sn-sidebar-tabs .content-text:nth-of-type(3){
+        position: relative;
+     }
+     .sn-sidebar-tabs .content-text:nth-of-type(3):hover .span3-none{
+         width: 50px;
+         left: -50px;
+     }
+    
+    .sn-sidebar-tabs-top{
+    background-color: #383838;
+    margin-top: 38px;
+    }
+    .sn-sidebar-tabs-top .content-text{
+        position: relative;
+     }
+     .sn-sidebar-tabs-top .content-text:hover .span3-none{
+        width: 70px;
+         left: -70px;
+     }
+     .sn-sidebar-tabs-top .content-text:hover .div3-none{
+        width: 158px;
+         /* left: -50px; */
+     }
+     .content-text-span3:hover .img{
+        width: 134px;
+         /* left: -50px; */
+     }
+     .jio{
+        position: absolute;
+        top: 0;
+        left: -1px;
+        width: 0;
+        height: 0;
+        border-color: transparent transparent transparent #DA3142;
+        border-style: solid;
+        /* 将底边框的宽度设置为0 */
+        border-width: 17px 0 17px 7px;
+        transition: all .1s;
+        display: none;
+     }
+     .content-text:hover .jio{
+        display: block;
+     }
+     .float-bottom{
+        margin-top: 335px;
+     }
